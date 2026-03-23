@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNJ TUR | Consultoria de Vistos de Luxo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6A00;
+            --primary-variant: #E65F00;
+            --background: #0B0F14;
+            --surface: #101419;
+            --on-surface: #F2F4F7;
+            --on-surface-variant: #98A2B3;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--background);
+            color: var(--on-surface);
+            scroll-behavior: smooth;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FF9500 0%, #FF6A00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #FF9500 0%, #FF6A00 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(255, 106, 0, 0.4);
+        }
+
+        .glass-header {
+            background: rgba(11, 15, 20, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .card-premium {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+        }
+
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #344054;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475467;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass-header border-b border-white/5">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 cursor-pointer" onclick="navigateTo('home')">
+                <img src="https://lh3.googleusercontent.com/aida/ADBb0uirT-BVnb-uqV2UqR1y7W0sqC7k5ywGD5Yo06gOMlVyWFvFXqDHzvoSAtiO_0W92GuqFrKcuCfvGZYrSktI4oUBoXVfnYl8Us0CH4pSGJGVYbgOu1GnJ2XGQ66DbYBvnvxmFJwG7fed6nLuyQz9bIBhv0XkbVZOVRM4FmuUMwCpx9u0Nkzv7NNOXLirXO3MroXMojRi8Vf3NTGtYgxZw93yXpgDXzM2R7FNpGsXgBlsh6towjdb7-C0MAQziSUsL4xLi4IQEflT1KU" alt="KNJ TUR Logo" class="h-10 w-auto">
+                <span class="hidden md:block text-xl font-extrabold tracking-tight text-white">KNJ TUR</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-10 font-semibold text-sm tracking-wide">
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link text-on-surface-variant hover:text-white transition-colors" data-screen="home">Home</a>
+                <a href="javascript:void(0)" onclick="navigateTo('blog')" class="nav-link text-on-surface-variant hover:text-white transition-colors" data-screen="blog">Blog</a>
+                <a href="javascript:void(0)" onclick="navigateTo('guia')" class="nav-link text-on-surface-variant hover:text-white transition-colors" data-screen="guia">Guia Visto</a>
+            </nav>
+            <a href="https://wa.me/5519991016031" target="_blank" class="btn-premium text-black px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2">
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Home Screen -->
+    <div id="home" class="screen active">
+        <!-- Hero -->
+        <section class="relative min-h-[90vh] flex items-center px-6 md:px-12 overflow-hidden pt-20">
+            <div class="absolute inset-0 z-0 opacity-30 pointer-events-none">
+                <div class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-orange-500/20 rounded-full blur-[160px]"></div>
+                <div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[140px]"></div>
+            </div>
+            <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Consultoria Indaiatuba</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                        Visto Americano <br/>
+                        <span class="text-gradient">Aprovado</span> com <br/>
+                        Segurança.
+                    </h1>
+                    <p class="text-xl text-gray-400 font-light leading-relaxed max-w-lg">
+                        Consultoria de alto padrão em Indaiatuba focada em estratégias personalizadas para maximizar sua chance de sucesso.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="https://wa.me/5519991016031" class="btn-premium px-10 py-5 text-black rounded-full font-extrabold text-lg flex items-center justify-center gap-3 shadow-2xl">
+                            Falar no WhatsApp
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block">
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoqnOJ0P0xjDs-LswEvCX_9NGpLczFO12I_G91T67Ri3gUfeCLzJii63FC6CpM0o9HYv6PMp2C1sJiVhiXu0niZgnI22U9vgzMMmnqq-wy7PA3RiITeKHMpWE1Tt7xUKt8k7bQ16Gsd3leTrUc2ausdtKKuq2wiwLZtILVMFeHtN_KMGUH9eIdDYEVk_PIelW8SzqgWpS953Qg8Hiwu_2lIy2Wn60j5dUPb8EZW4QopvBJ6jMmsCSQyy3DEUPqtleVfFUGQqtCazQO" alt="Passaporte" class="w-full h-[600px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 p-8 card-premium rounded-2xl border border-white/10 shadow-3xl backdrop-blur-xl z-20">
+                        <div class="flex flex-col">
+                            <span class="text-4xl font-black text-orange-500">98%</span>
+                            <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 mt-1">Taxa de Sucesso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-24 px-6 border-y border-white/5 bg-white/[0.01]">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+                    <div class="space-y-4">
+                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-orange-500 text-3xl">groups</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">+ 1.000 Atendidos</h3>
+                        <p class="text-gray-400 font-light">Referência sólida para viajantes que buscam excelência e confiança.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-orange-500 text-3xl">verified</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Alta Aprovação</h3>
+                        <p class="text-gray-400 font-light">Análise de perfil cirúrgica para reduzir riscos e antecipar soluções.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <span class="material-symbols-outlined text-orange-500 text-3xl">person_celebrate</span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Personalização</h3>
+                        <p class="text-gray-400 font-light">Cada aplicação é tratada como um projeto único e exclusivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problems -->
+        <section class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20 text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6">O perigo dos detalhes.</h2>
+                    <p class="text-lg text-gray-400 font-light">Erros pequenos que impedem grandes sonhos. Saiba onde a maioria falha:</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
+                            <span class="material-symbols-outlined text-orange-500">edit_document</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-orange-500 transition-colors">Erros no DS-160</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">A base do seu processo. Dados inconsistentes são o motivo número 1 de negativas imediatas.</p>
+                    </div>
+                    <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
+                            <span class="material-symbols-outlined text-orange-500">record_voice_over</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-orange-500 transition-colors">Despreparo na Entrevista</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">Nervosismo e respostas sem foco geram desconfiança. O preparo psicológico é vital.</p>
+                    </div>
+                    <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
+                            <span class="material-symbols-outlined text-orange-500">rule</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4 group-hover:text-orange-500 transition-colors">Inconsistência de Dados</h4>
+                        <p class="text-gray-400 text-sm font-light leading-relaxed">Conflitos entre documentos e fala destroem sua credibilidade perante o oficial consular.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert -->
+        <section class="py-32 px-6">
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-[40px] overflow-hidden border border-white/10 aspect-[4/5]">
+                        <img src="https://lh3.googleusercontent.com/aida/ADBb0ugfNZaPjWpabSBhicxDq3ttGZJNw0b6KLAM8tVfTUMy-Jqjaw-bpyyWAPNFFiSAhCSJTwTJwz_S7EPFbPd47v8rJp1dxtewyCLQR_tcB79HGigjKG9MFf77EWU0e0eGMM921OSE3WxVz4L19rHcI34ELYDg_FvcG5VP4fuXhKzU9LVowPnT4JnpAL3U995dxff1xyK3vM9Rw33SLsD_t4FttqQmkRzEOvOvCNxRHluOKxwwQ0Dn1abDxKLlSCsTOWxSN1abmyIZIzU" alt="Kenji" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
+                        <div class="absolute bottom-10 left-10">
+                            <p class="text-orange-500 font-bold tracking-[0.2em] uppercase text-xs mb-2">Fundador & Consultor Master</p>
+                            <h3 class="text-4xl font-black text-white">Kenji</h3>
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -z-10"></div>
+                </div>
+                <div class="space-y-10">
+                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20">
+                        <span class="material-symbols-outlined text-orange-500 text-sm">verified</span>
+                        <span class="text-[10px] font-black tracking-widest uppercase text-orange-500">Especialista Autoridade</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                        A expertise que faz a <br/>
+                        <span class="text-gradient">diferença</span> na aprovação.
+                    </h2>
+                    <div class="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
+                        <p>Com anos de atuação dedicados exclusivamente à consultoria de vistos, Kenji consolidou a KNJ TUR como sinônimo de rigor técnico e transparência.</p>
+                        <p>Nossa metodologia transcende o simples preenchimento de formulários; construímos uma narrativa estratégica que ressoa positivamente com as expectativas consulares.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="p-6 rounded-2xl card-premium border-white/5">
+                            <span class="text-4xl font-black text-orange-500">+10</span>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-2">Anos de Mercado</p>
+                        </div>
+                        <div class="p-6 rounded-2xl card-premium border-white/5">
+                            <span class="text-4xl font-black text-orange-500">1k+</span>
+                            <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-2">Sonhos Realizados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Screen -->
+    <div id="blog" class="screen">
+        <main class="pt-32 pb-20 px-6 max-w-5xl mx-auto">
+            <article>
+                <section class="mb-16">
+                    <span class="text-orange-500 uppercase tracking-[0.3em] text-xs mb-4 block font-bold">Especialista em Vistos</span>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-8">
+                        Precisa falar inglês para tirar o <span class="text-gradient">visto americano?</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 font-light leading-relaxed mb-10">
+                        A dúvida mais comum entre brasileiros que sonham em visitar os Estados Unidos. Desvendamos o mito da fluência obrigatória no consulado.
+                    </p>
+                    <div class="w-full aspect-[21/9] relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvDI7RE4ZYsbKb-kN2Nbj4p28skKEIebln0FYjTnksnwq_4ZGXDrJoBUK4CsaBkbqGBMAjGgqsadqE5pIkdt8w-vczzW0T5s5qIku8FZtJzAxJTikx0pzaM6XaCPL1cgkJQ1CTpvdBFerla_9fp4sw_bv-fd7-rgW3IdlTlrH9Kc07Hfj9iVMrIEIbRK5EbgmAirQpZNEP5OitWD2EdMOXLNAWXkl_qukkjiq4kdozVFCPYJ6OdI2wtnZo0w00ya7jinJjuXZ_lwm0" alt="Consulado" class="object-cover w-full h-full">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
+                    </div>
+                </section>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-8 space-y-10">
+                        <div class="card-premium p-8 md:p-10 rounded-2xl border border-white/5">
+                            <h2 class="text-2xl font-bold mb-6 text-orange-500 flex items-center gap-3">
+                                <span class="material-symbols-outlined">verified</span>
+                                O veredito oficial
+                            </h2>
+                            <div class="space-y-6 text-lg text-gray-400 leading-relaxed">
+                                <p>A resposta curta e direta é: <strong class="text-white">Não</strong>. A entrevista pode ser feita inteiramente em português.</p>
+                                <p>O consulado americano no Brasil conta com oficiais consulares que falam português fluentemente. O objetivo principal da entrevista não é avaliar sua capacidade linguística, mas sim <span class="italic text-white">avaliar seu perfil, seus vínculos com o Brasil e a veracidade das suas intenções de viagem</span>.</p>
+                                <blockquote class="p-6 bg-white/5 rounded-xl border-l-4 border-orange-500 italic text-white">
+                                    "O consulado avalia seu perfil socioeconômico e não sua fluência no idioma."
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="bg-white/[0.02] p-8 md:p-10 rounded-2xl border border-white/5">
+                            <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-red-500">warning</span>
+                                Erros que você deve evitar
+                            </h3>
+                            <ul class="space-y-4">
+                                <li class="flex gap-4 items-start">
+                                    <span class="material-symbols-outlined text-red-500 text-lg">close</span>
+                                    <span class="text-gray-400">Achar que a falta de inglês resultará em uma negativa automática.</span>
+                                </li>
+                                <li class="flex gap-4 items-start">
+                                    <span class="material-symbols-outlined text-red-500 text-lg">close</span>
+                                    <span class="text-gray-400">Tentar forçar um inglês básico se você não se sente confortável. Isso gera insegurança.</span>
+                                </li>
+                                <li class="flex gap-4 items-start">
+                                    <span class="material-symbols-outlined text-red-500 text-lg">close</span>
+                                    <span class="text-gray-400">Não se preparar para responder perguntas fundamentais sobre seu vínculo com o Brasil.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <aside class="lg:col-span-4 space-y-6">
+                        <div class="sticky top-28 space-y-6">
+                            <div class="bg-gradient-to-br from-white/5 to-transparent p-8 rounded-2xl border border-white/10 shadow-xl">
+                                <h3 class="text-xl font-bold mb-4">Pronto para sua viagem?</h3>
+                                <p class="text-gray-400 mb-8 text-sm leading-relaxed">Deixe que a KNJ TUR cuide de toda a burocracia para você. Aumente suas chances de aprovação.</p>
+                                <a href="https://wa.me/5519991016031" class="flex items-center justify-center w-full bg-orange-500 text-black py-4 rounded-xl font-extrabold uppercase tracking-widest text-xs transition-all hover:scale-105">
+                                    Falar no WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- Guia Screen -->
+    <div id="guia" class="screen">
+        <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40 items-center">
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-orange-500 font-bold">Edição Exclusiva 2026</span>
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-10">
+                        Guia do <br/> <span class="text-gradient">Visto Americano</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-400 font-light max-w-2xl leading-relaxed mb-12">
+                        O caminho para a aprovação exige estratégia e precisão. Descubra como a KNJ TUR transforma burocracia em uma jornada de sucesso.
+                    </p>
+                    <a href="https://wa.me/5519991016031" class="btn-premium px-8 py-4 rounded-xl text-black font-black text-lg shadow-xl inline-block">
+                        Falar com Especialista
+                    </a>
+                </div>
+                <div class="lg:col-span-5">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW-ABKHjTIYE8drvqydDEfR85cfYDU0Xhbg5HCt6_Py_6-grlJR_0Svj0K_gwN-VN5cDgq8WHDabOxV1I079-cIugJ8wUirVE0GLPCuM-oTPeuRkL1vAWDV4wbvDHsQvI1SfGSigPaND6Gv6j0nm44ugXG4e5QsBDRYpA5Xa9ezbXZ_RdDt3I9sPBGlfduH1-mTdmx79SN_wNp2JNt29NSHTw74sndR0aL81SSUpjR4us4wRZr3YdqumnT80wbHVSpWBK4M893T_z2" alt="Guia" class="rounded-3xl shadow-2xl border border-white/5">
+                </div>
+            </section>
+
+            <section class="mb-40">
+                <h2 class="text-4xl font-bold mb-16 text-center">O Fluxo da Conquista</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
+                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">01</div>
+                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">edit_document</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Formulário</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Preenchimento minucioso do DS-160. Cada resposta é estratégica.</p>
+                    </div>
+                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
+                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">02</div>
+                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">payments</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Pagamento</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Gestão da taxa MRV e validação do processo junto ao sistema consular.</p>
+                    </div>
+                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
+                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">03</div>
+                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">event_available</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Agendamento</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Logística inteligente para CASV e entrevista em datas ideais.</p>
+                    </div>
+                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
+                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">04</div>
+                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">verified_user</span>
+                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Entrevista</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Preparação técnica e comportamental para o momento decisivo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-40">
+                <div class="grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="space-y-8">
+                        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Por que a maioria é <span class="text-red-500">negada?</span></h2>
+                        <p class="text-lg text-gray-400 font-light leading-relaxed">O consulado não nega por acaso. Existem padrões claros que levam à rejeição:</p>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="material-symbols-outlined text-red-500 text-xs">close</span>
+                                </span>
+                                <div>
+                                    <h4 class="font-bold text-white">Falta de Vínculos Fortes</h4>
+                                    <p class="text-sm text-gray-400">Não demonstrar que você tem motivos reais para voltar ao Brasil.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="material-symbols-outlined text-red-500 text-xs">close</span>
+                                </span>
+                                <div>
+                                    <h4 class="font-bold text-white">Inconsistência Financeira</h4>
+                                    <p class="text-sm text-gray-400">Renda declarada incompatível com o custo da viagem planejada.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                                    <span class="material-symbols-outlined text-red-500 text-xs">close</span>
+                                </span>
+                                <div>
+                                    <h4 class="font-bold text-white">Histórico de Viagens Pobre</h4>
+                                    <p class="text-sm text-gray-400">Primeira viagem internacional sendo para os EUA sem um perfil robusto.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/[0.02] p-10 rounded-[40px] border border-white/5">
+                        <h3 class="text-2xl font-bold mb-10">Perguntas Frequentes</h3>
+                        <div class="space-y-8">
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-orange-500">Quanto tempo demora o processo?</h4>
+                                <p class="text-sm text-gray-400">Depende da fila do consulado, mas a consultoria agiliza toda a parte burocrática em poucos dias.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-orange-500">Posso tentar de novo se fui negado?</h4>
+                                <p class="text-sm text-gray-400">Sim, mas é fundamental analisar o motivo da negativa anterior antes de uma nova tentativa.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <h4 class="font-bold text-orange-500">A KNJ garante a aprovação?</h4>
+                                <p class="text-sm text-gray-400">Ninguém pode garantir. O que garantimos é a melhor estratégia possível para maximizar suas chances.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/5 bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="flex flex-col items-center md:items-start gap-4">
+                    <img src="https://lh3.googleusercontent.com/aida/ADBb0uirT-BVnb-uqV2UqR1y7W0sqC7k5ywGD5Yo06gOMlVyWFvFXqDHzvoSAtiO_0W92GuqFrKcuCfvGZYrSktI4oUBoXVfnYl8Us0CH4pSGJGVYbgOu1GnJ2XGQ66DbYBvnvxmFJwG7fed6nLuyQz9bIBhv0XkbVZOVRM4FmuUMwCpx9u0Nkzv7NNOXLirXO3MroXMojRi8Vf3NTGtYgxZw93yXpgDXzM2R7FNpGsXgBlsh6towjdb7-C0MAQziSUsL4xLi4IQEflT1KU" alt="KNJ TUR" class="h-12 w-auto opacity-80">
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500">© 2024 KNJ TUR. LUXURY VISA CONSULTANCY.</p>
+                </div>
+                <div class="flex gap-12">
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-orange-500 transition-colors">Privacidade</a>
+                    <a href="#" class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-orange-500 transition-colors">Termos</a>
+                    <a href="https://wa.me/5519991016031" class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-orange-500 transition-colors">Contato</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function navigateTo(screenId) {
+            // Hide all screens
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            
+            // Show selected screen
+            const targetScreen = document.getElementById(screenId);
+            if (targetScreen) {
+                targetScreen.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            // Update nav links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('data-screen') === screenId) {
+                    link.classList.add('text-white');
+                    link.classList.remove('text-on-surface-variant');
+                } else {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-on-surface-variant');
+                }
+            });
+        }
+
+        // Initial navigation
+        window.addEventListener('load', () => {
+            navigateTo('home');
+        });
+    </script>
+</body>
+</html>
