@@ -113,11 +113,43 @@
                 <a href="javascript:void(0)" onclick="navigateTo('blog')" class="nav-link btn-outline px-5 py-2.5 rounded-full text-on-surface-variant" data-screen="blog">Blog</a>
                 <a href="javascript:void(0)" onclick="navigateTo('viagens')" class="nav-link border border-dashed border-white/10 px-5 py-2.5 rounded-full text-white/40 hover:text-white hover:border-white/30 transition-all uppercase italic font-medium" data-screen="viagens">VIAGENS</a>
             </nav>
-            <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="btn-premium text-black px-6 py-2.5 rounded-full text-sm font-bold flex items-center gap-2">
-                WhatsApp
-            </a>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="hidden sm:flex btn-premium text-black px-6 py-2.5 rounded-full text-sm font-bold items-center gap-2">
+                    WhatsApp
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined text-3xl" id="menuIcon">menu</span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="fixed inset-0 z-[60] bg-[#0B0F14]/95 backdrop-blur-xl translate-x-full transition-transform duration-500 md:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-16">
+                <div class="flex items-center gap-4">
+                    <img src="https://lh3.googleusercontent.com/aida/ADBb0uirT-BVnb-uqV2UqR1y7W0sqC7k5ywGD5Yo06gOMlVyWFvFXqDHzvoSAtiO_0W92GuqFrKcuCfvGZYrSktI4oUBoXVfnYl8Us0CH4pSGJGVYbgOu1GnJ2XGQ66DbYBvnvxmFJwG7fed6nLuyQz9bIBhv0XkbVZOVRM4FmuUMwCpx9u0Nkzv7NNOXLirXO3MroXMojRi8Vf3NTGtYgxZw93yXpgDXzM2R7FNpGsXgBlsh6towjdb7-C0MAQziSUsL4xLi4IQEflT1KU" alt="KNJ TUR Logo" class="h-10 w-auto">
+                    <span class="text-xl font-extrabold tracking-tight text-white">KNJ TUR</span>
+                </div>
+                <button onclick="toggleMobileMenu()" class="text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link text-3xl font-black tracking-tighter text-white hover:text-orange-500 transition-colors" data-screen="home">Home</a>
+                <a href="javascript:void(0)" onclick="navigateTo('guia')" class="nav-link text-3xl font-black tracking-tighter text-white hover:text-orange-500 transition-colors" data-screen="guia">Guia Visto</a>
+                <a href="javascript:void(0)" onclick="navigateTo('blog')" class="nav-link text-3xl font-black tracking-tighter text-white hover:text-orange-500 transition-colors" data-screen="blog">Blog</a>
+                <a href="javascript:void(0)" onclick="navigateTo('viagens')" class="nav-link text-3xl font-black tracking-tighter text-white/40 hover:text-white italic" data-screen="viagens">VIAGENS</a>
+            </nav>
+            <div class="mt-auto pt-12 border-t border-white/5">
+                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="btn-premium text-black w-full py-5 rounded-2xl font-black text-center text-lg flex items-center justify-center gap-3">
+                    WhatsApp
+                    <span class="material-symbols-outlined">chat</span>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Home Screen -->
     <div id="home" class="screen active">
@@ -688,6 +720,7 @@
                     <div class="space-y-2 text-center md:text-left">
                         <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500">© 2024 KNJ TUR. LUXURY VISA CONSULTANCY.</p>
                         <p class="text-[10px] uppercase tracking-[0.1em] text-gray-600">R. Pedro de Toledo, 1718 - Jardim Dom Bosco, Indaiatuba - SP, 13333-320</p>
+                        <p class="text-[10px] uppercase tracking-[0.1em] text-orange-500 font-bold">KENJI@KNJTUR.COM</p>
                     </div>
                 </div>
                 <div class="flex gap-12">
@@ -699,8 +732,32 @@
         </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 z-[100] w-14 h-14 rounded-full bg-orange-500 text-black shadow-2xl flex items-center justify-center opacity-0 translate-y-10 transition-all duration-300 pointer-events-none hover:scale-110 active:scale-95">
+        <span class="material-symbols-outlined text-2xl">arrow_upward</span>
+    </button>
+
     <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const isOpen = !menu.classList.contains('translate-x-full');
+            
+            if (isOpen) {
+                menu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            } else {
+                menu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
         function navigateTo(screenId) {
+            // Close mobile menu if open
+            const menu = document.getElementById('mobileMenu');
+            if (menu && !menu.classList.contains('translate-x-full')) {
+                toggleMobileMenu();
+            }
+
             // Hide all screens
             document.querySelectorAll('.screen').forEach(screen => {
                 screen.classList.remove('active');
@@ -739,6 +796,16 @@
         // Initial navigation
         window.addEventListener('load', () => {
             navigateTo('home');
+        });
+
+        // Scroll to Top Button Visibility
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 500) {
+                btn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            } else {
+                btn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
         });
     </script>
 </body>
