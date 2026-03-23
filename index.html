@@ -58,6 +58,29 @@
             background: rgba(255, 106, 0, 0.1);
         }
 
+        /* Mobile Menu Staggered Animation */
+        #mobileMenu.translate-x-full .mobile-nav-item {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        #mobileMenu:not(.translate-x-full) .mobile-nav-item {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-nav-item:nth-child(1) { transition-delay: 0.1s !important; }
+        .mobile-nav-item:nth-child(2) { transition-delay: 0.2s !important; }
+        .mobile-nav-item:nth-child(3) { transition-delay: 0.3s !important; }
+        .mobile-nav-item:nth-child(4) { transition-delay: 0.4s !important; }
+
+        .mobile-nav-link-active {
+            color: #FF6A00 !important;
+        }
+        .mobile-nav-link-active .active-indicator {
+            width: 32px !important;
+            opacity: 1 !important;
+        }
+
         .glass-header {
             background: rgba(11, 15, 20, 0.85);
             backdrop-filter: blur(12px);
@@ -125,26 +148,74 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobileMenu" class="fixed inset-0 z-[60] bg-[#0B0F14]/95 backdrop-blur-xl translate-x-full transition-transform duration-500 md:hidden">
+    <div id="mobileMenu" class="fixed inset-0 z-[60] bg-[#0B0F14]/98 backdrop-blur-2xl translate-x-full transition-transform duration-500 md:hidden">
         <div class="flex flex-col h-full p-8">
-            <div class="flex justify-between items-center mb-16">
-                <div class="flex items-center gap-4">
-                    <img src="https://lh3.googleusercontent.com/aida/ADBb0uirT-BVnb-uqV2UqR1y7W0sqC7k5ywGD5Yo06gOMlVyWFvFXqDHzvoSAtiO_0W92GuqFrKcuCfvGZYrSktI4oUBoXVfnYl8Us0CH4pSGJGVYbgOu1GnJ2XGQ66DbYBvnvxmFJwG7fed6nLuyQz9bIBhv0XkbVZOVRM4FmuUMwCpx9u0Nkzv7NNOXLirXO3MroXMojRi8Vf3NTGtYgxZw93yXpgDXzM2R7FNpGsXgBlsh6towjdb7-C0MAQziSUsL4xLi4IQEflT1KU" alt="KNJ TUR Logo" class="h-10 w-auto">
-                    <span class="text-xl font-extrabold tracking-tight text-white">KNJ TUR</span>
+            <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-3">
+                    <img src="https://lh3.googleusercontent.com/aida/ADBb0uirT-BVnb-uqV2UqR1y7W0sqC7k5ywGD5Yo06gOMlVyWFvFXqDHzvoSAtiO_0W92GuqFrKcuCfvGZYrSktI4oUBoXVfnYl8Us0CH4pSGJGVYbgOu1GnJ2XGQ66DbYBvnvxmFJwG7fed6nLuyQz9bIBhv0XkbVZOVRM4FmuUMwCpx9u0Nkzv7NNOXLirXO3MroXMojRi8Vf3NTGtYgxZw93yXpgDXzM2R7FNpGsXgBlsh6towjdb7-C0MAQziSUsL4xLi4IQEflT1KU" alt="KNJ TUR Logo" class="h-8 w-auto">
+                    <span class="text-lg font-black tracking-tighter text-white">KNJ TUR</span>
                 </div>
-                <button onclick="toggleMobileMenu()" class="text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
+                <button onclick="toggleMobileMenu()" class="text-white/60 p-2 hover:bg-white/5 hover:text-white rounded-full transition-all">
                     <span class="material-symbols-outlined text-3xl">close</span>
                 </button>
             </div>
-            <nav class="flex flex-col gap-6">
-                <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link text-3xl font-black tracking-tighter text-white hover:text-orange-500 transition-colors" data-screen="home">Home</a>
-                <a href="javascript:void(0)" onclick="navigateTo('guia')" class="nav-link text-3xl font-black tracking-tighter text-white hover:text-orange-500 transition-colors" data-screen="guia">Guia Visto</a>
-                <a href="javascript:void(0)" onclick="navigateTo('blog')" class="nav-link text-3xl font-black tracking-tighter text-white hover:text-orange-500 transition-colors" data-screen="blog">Blog</a>
-                <a href="javascript:void(0)" onclick="navigateTo('viagens')" class="nav-link text-3xl font-black tracking-tighter text-white/40 hover:text-white italic" data-screen="viagens">VIAGENS</a>
+            
+            <nav class="flex flex-col gap-2">
+                <div class="mobile-nav-item">
+                    <a href="javascript:void(0)" onclick="navigateTo('home')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="home">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">home</span>
+                            <span class="text-3xl font-black tracking-tighter text-white group-hover:text-orange-500 transition-colors">Home</span>
+                        </div>
+                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="javascript:void(0)" onclick="navigateTo('guia')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="guia">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">description</span>
+                            <span class="text-3xl font-black tracking-tighter text-white group-hover:text-orange-500 transition-colors">Guia Visto</span>
+                        </div>
+                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="javascript:void(0)" onclick="navigateTo('blog')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="blog">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">article</span>
+                            <span class="text-3xl font-black tracking-tighter text-white group-hover:text-orange-500 transition-colors">Blog</span>
+                        </div>
+                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
+                    </a>
+                </div>
+                <div class="mobile-nav-item">
+                    <a href="javascript:void(0)" onclick="navigateTo('viagens')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="viagens">
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">flight_takeoff</span>
+                            <span class="text-3xl font-black tracking-tighter text-white/40 group-hover:text-white italic transition-colors">VIAGENS</span>
+                        </div>
+                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
+                    </a>
+                </div>
             </nav>
-            <div class="mt-auto pt-12 border-t border-white/5">
-                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="btn-premium text-black w-full py-5 rounded-2xl font-black text-center text-lg flex items-center justify-center gap-3">
-                    WhatsApp
+
+            <div class="mt-auto space-y-8">
+                <div class="space-y-4">
+                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">Contato Direto</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-white/60">
+                            <span class="material-symbols-outlined text-sm">mail</span>
+                            <span class="text-xs font-bold tracking-widest uppercase">KENJI@KNJTUR.COM</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-white/60">
+                            <span class="material-symbols-outlined text-sm">location_on</span>
+                            <span class="text-[10px] font-medium leading-relaxed uppercase tracking-wider">Indaiatuba - SP, Brasil</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="btn-premium text-black w-full py-5 rounded-2xl font-black text-center text-lg flex items-center justify-center gap-3 shadow-2xl shadow-orange-500/20">
+                    Falar com Consultor
                     <span class="material-symbols-outlined">chat</span>
                 </a>
             </div>
@@ -770,7 +841,7 @@
                 window.scrollTo(0, 0);
             }
 
-            // Update nav links
+            // Update desktop nav links
             document.querySelectorAll('.nav-link').forEach(link => {
                 const isViagens = link.getAttribute('data-screen') === 'viagens';
                 if (link.getAttribute('data-screen') === screenId) {
@@ -789,6 +860,15 @@
                         link.classList.remove('text-white', 'border-white/40');
                         link.classList.add('text-white/40', 'border-white/10');
                     }
+                }
+            });
+
+            // Update mobile nav links
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                if (link.getAttribute('data-screen') === screenId) {
+                    link.classList.add('mobile-nav-link-active');
+                } else {
+                    link.classList.remove('mobile-nav-link-active');
                 }
             });
         }
