@@ -569,10 +569,16 @@
 
             <!-- Blog Post Content Viewer -->
             <div id="blog-content" class="hidden">
-                <button onclick="hideBlogPost()" class="flex items-center gap-2 text-orange-500 font-bold mb-12 hover:translate-x-[-10px] transition-transform group">
-                    <span class="material-symbols-outlined">arrow_back</span>
-                    Voltar ao Blog
-                </button>
+                <div class="flex items-center justify-between mb-12">
+                    <button onclick="hideBlogPost()" class="flex items-center gap-2 text-orange-500 font-bold hover:translate-x-[-4px] transition-transform group">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                        Voltar ao Blog
+                    </button>
+                    <button onclick="shareArticle()" class="flex items-center gap-2 text-white/40 hover:text-orange-500 transition-all px-4 py-2 rounded-full border border-white/5 hover:border-orange-500/20 bg-white/5">
+                        <span class="material-symbols-outlined text-sm">share</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest">Compartilhar</span>
+                    </button>
+                </div>
 
                 <!-- Post 1: EES -->
                 <article id="post-ees" class="blog-post hidden">
@@ -1046,6 +1052,35 @@
                 content.classList.add('hidden');
             }
             window.scrollTo(0, 0);
+        }
+
+        function shareArticle() {
+            const activePost = document.querySelector('.blog-post:not(.hidden)');
+            const title = activePost ? activePost.querySelector('h1').innerText : 'KNJ TUR Blog';
+            const url = window.location.href;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: `Confira este artigo da KNJ TUR: ${title}`,
+                    url: url
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                });
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    const btn = event.currentTarget;
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<span class="material-symbols-outlined text-sm">check</span> <span class="text-[10px] font-bold uppercase tracking-widest">Copiado!</span>';
+                    btn.classList.add('text-green-500', 'border-green-500/20');
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.remove('text-green-500', 'border-green-500/20');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy:', err);
+                });
+            }
         }
 
         function toggleMobileMenu() {
