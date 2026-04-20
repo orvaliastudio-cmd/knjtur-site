@@ -19,13 +19,13 @@ async function startServer() {
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath));
-    app.get('*', (req, res) => {
+    app.get('*all', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
   }
 
   // Fallback for SPA routing in development
-  app.get('*', async (req, res, next) => {
+  app.get('*all', async (req, res, next) => {
     if (process.env.NODE_ENV !== "production") {
         // In dev, Vite handles the SPA fallback automatically via middlewareMode: true + appType: 'spa'
         // But we can explicitly serve index.html if needed for custom logic
