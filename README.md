@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# KNJ TUR - Estrutura Multipágina Profissional
 
-# Run and deploy your AI Studio app
+Este projeto foi configurado com uma arquitetura física de pastas para garantir URLs limpas e SEO máximo.
 
-This contains everything you need to run your app locally.
+## Estrutura de Pastas
+- `/`: Home Page
+- `/visto-americano/index.html`: Página sobre o visto (Acessível via /visto-americano)
+- `/consultoria/index.html`: Página de consultoria (Acessível via /consultoria)
+- `/blog/index.html`: Listagem de notícias
+- `/blog/ees-passo-a-passo/index.html`: Artigo específico
 
-View your app in AI Studio: https://ai.studio/apps/160bcd2b-a81e-4ab5-b44d-ec83d47c377d
+## Deploy na Vercel / GitHub Pages
+A estrutura já está preparada. Basta subir para o repositório. As URLs funcionarão sem a extensão `.html` porque a maioria dos servidores estáticos busca automaticamente pelo arquivo `index.html` dentro da pasta requisitada.
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Design
+- **Cores:** #0A0A0A (Fundo), #FF8C00 (Destaque Laranja).
+- **SEO:** Metatags individuais em cada página.
+- **Interatividade:** Botão de WhatsApp fixo e links de alta conversão.

@@ -1,1653 +1,249 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KNJ TUR | Consultoria de Vistos de Luxo</title>
+    <title>KNJ TUR | Consultoria Especializada em Visto Americano</title>
+    <meta name="description" content="Consultoria estratégica para vistos americanos, preparação para entrevista e assessoria completa em viagens.">
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #FF6A00;
-            --primary-variant: #E65F00;
-            --background: #0B0F14;
-            --surface: #101419;
-            --on-surface: #F2F4F7;
-            --on-surface-variant: #98A2B3;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF8C00',
+                        'primary-dark': '#CC7000',
+                        accent: '#FFD700',
+                        surface: '#0A0A0A',
+                        'surface-variant': '#141414',
+                        'on-surface': '#FFFFFF',
+                        'on-surface-variant': '#A0A0A0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
         }
-
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--background);
-            color: var(--on-surface);
-            scroll-behavior: smooth;
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #FF9500 0%, #FF6A00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-premium {
-            background: linear-gradient(135deg, #FF9500 0%, #FF6A00 100%);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-premium:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(255, 106, 0, 0.4);
-        }
-
-        .btn-outline {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary) !important;
-            background: rgba(255, 106, 0, 0.05);
-            box-shadow: 0 0 15px rgba(255, 106, 0, 0.1);
-        }
-
-        .nav-link-active {
-            border-color: var(--primary);
-            color: white !important;
-            background: rgba(255, 106, 0, 0.1);
-        }
-
-        /* Mobile Menu Staggered Animation */
-        #mobileMenu.translate-x-full .mobile-nav-item {
-            opacity: 0;
-            transform: translateX(30px);
-        }
-        #mobileMenu:not(.translate-x-full) .mobile-nav-item {
-            opacity: 1;
-            transform: translateX(0);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .mobile-nav-item:nth-child(1) { transition-delay: 0.1s !important; }
-        .mobile-nav-item:nth-child(2) { transition-delay: 0.2s !important; }
-        .mobile-nav-item:nth-child(3) { transition-delay: 0.3s !important; }
-        .mobile-nav-item:nth-child(4) { transition-delay: 0.4s !important; }
-
-        .mobile-nav-link-active {
-            color: #FF6A00 !important;
-        }
-        .mobile-nav-link-active .active-indicator {
-            width: 32px !important;
-            opacity: 1 !important;
-        }
-
-        .btn-whatsapp {
-            background: #009734;
-            color: #F2F4F7 !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(0, 151, 52, 0.3);
-            background: #007a2a;
-        }
-
-        @keyframes pulse-whatsapp {
-            0% { box-shadow: 0 0 0 0 rgba(0, 151, 52, 0.3); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 151, 52, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 151, 52, 0); }
-        }
-
-        .animate-pulse-whatsapp {
-            animation: pulse-whatsapp 2s infinite;
-        }
-
-        .glass-header {
-            background: rgba(11, 15, 20, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .card-premium {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(4px);
-        }
-
-        .screen {
-            display: none;
-        }
-
-        .screen.active {
-            display: block;
-        }
-
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--background);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #344054;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475467;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes gentle-float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(1deg); }
-        }
-        .animate-gentle-float {
-            animation: gentle-float 8s ease-in-out infinite;
-        }
-        .animate-glow {
-            filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.3));
-        }
-    </style>
+    </script>
 </head>
-<body class="antialiased">
-
+<body class="bg-surface text-on-surface antialiased selection:bg-primary/30">
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass-header border-b border-white/5">
-        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-            <div class="flex items-center gap-4 cursor-pointer group" onclick="navigateTo('home')">
-                <img id="headerLogo" src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR Logo" class="h-14 w-auto transition-all duration-500 group-hover:scale-105">
-                <span id="headerTitle" class="hidden md:block text-xl font-extrabold tracking-tight text-white group-hover:text-orange-500 transition-all duration-500">KNJ TUR</span>
-            </div>
-            <nav class="hidden md:flex items-center gap-3 font-bold text-xs uppercase tracking-widest">
-                <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link btn-outline px-5 py-2.5 rounded-full text-on-surface-variant" data-screen="home">Home</a>
-                <a href="javascript:void(0)" onclick="navigateTo('guia')" class="nav-link btn-outline px-5 py-2.5 rounded-full text-on-surface-variant" data-screen="guia">Guia Visto</a>
-                <a href="javascript:void(0)" onclick="navigateTo('blog')" class="nav-link btn-outline px-5 py-2.5 rounded-full text-on-surface-variant" data-screen="blog">Blog</a>
-                <a href="javascript:void(0)" onclick="navigateTo('viagens')" class="nav-link border border-dashed border-white/10 px-5 py-2.5 rounded-full text-white/40 hover:text-white hover:border-white/30 transition-all uppercase italic font-medium" data-screen="viagens">VIAGENS</a>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-lg border-b border-white/5 h-20 flex items-center transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center group">
+                <img src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR Logo" class="h-10 md:h-12 w-auto transition-transform group-hover:scale-105">
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-on-surface-variant">
+                <a href="/" class="hover:text-primary transition-colors text-primary">Home</a>
+                <a href="/visto-americano/" class="hover:text-primary transition-colors">Guia Visto</a>
+                <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                <a href="/viagens/" class="hover:text-primary transition-colors">Viagens</a>
+                <a href="https://www.instagram.com/knjtur" target="_blank" class="hover:text-primary transition-colors">
+                    <i data-lucide="instagram" size="20"></i>
+                </a>
+                <a href="https://wa.me/5511994085822?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20maiores%20informações" target="_blank" class="bg-[#25D366] hover:bg-opacity-90 text-white px-6 py-2.5 rounded-full transition-all flex items-center gap-2">
+                    <i data-lucide="message-circle" size="18"></i> WhatsApp
+                </a>
             </nav>
-            <div class="flex items-center gap-4">
-                <a href="https://www.instagram.com/knjtur" target="_blank" class="p-2 text-white/60 hover:text-orange-500 transition-colors flex items-center" title="Siga-nos no Instagram">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="hidden sm:flex btn-whatsapp px-6 py-2.5 rounded-full text-sm font-bold items-center gap-2 shadow-lg">
-                    <span class="material-symbols-outlined text-lg">chat</span>
-                    WhatsApp
-                </a>
-                <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
-                    <span class="material-symbols-outlined text-3xl" id="menuIcon">menu</span>
-                </button>
-            </div>
+
+            <!-- Menu Mobile Btn -->
+            <button id="menu-btn" class="md:hidden text-white p-2">
+                <i data-lucide="menu"></i>
+            </button>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobileMenu" class="fixed inset-0 z-[60] bg-[#0B0F14]/98 backdrop-blur-2xl translate-x-full transition-transform duration-500 md:hidden">
-        <div class="flex flex-col h-full p-8">
-            <div class="flex justify-between items-center mb-12">
-                <div class="flex items-center gap-3">
-                    <img src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR Logo" class="h-8 w-auto">
-                    <span class="text-lg font-black tracking-tighter text-white">KNJ TUR</span>
-                </div>
-                <button onclick="toggleMobileMenu()" class="text-white/60 p-2 hover:bg-white/5 hover:text-white rounded-full transition-all">
-                    <span class="material-symbols-outlined text-3xl">close</span>
-                </button>
-            </div>
-            
-            <nav class="flex flex-col gap-2">
-                <div class="mobile-nav-item">
-                    <a href="javascript:void(0)" onclick="navigateTo('home')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="home">
-                        <div class="flex items-center gap-4">
-                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">home</span>
-                            <span class="text-3xl font-black tracking-tighter text-white group-hover:text-orange-500 transition-colors">Home</span>
-                        </div>
-                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
-                    </a>
-                </div>
-                <div class="mobile-nav-item">
-                    <a href="javascript:void(0)" onclick="navigateTo('guia')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="guia">
-                        <div class="flex items-center gap-4">
-                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">description</span>
-                            <span class="text-3xl font-black tracking-tighter text-white group-hover:text-orange-500 transition-colors">Guia Visto</span>
-                        </div>
-                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
-                    </a>
-                </div>
-                <div class="mobile-nav-item">
-                    <a href="javascript:void(0)" onclick="navigateTo('blog')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="blog">
-                        <div class="flex items-center gap-4">
-                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">article</span>
-                            <span class="text-3xl font-black tracking-tighter text-white group-hover:text-orange-500 transition-colors">Blog</span>
-                        </div>
-                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
-                    </a>
-                </div>
-                <div class="mobile-nav-item">
-                    <a href="javascript:void(0)" onclick="navigateTo('viagens')" class="mobile-nav-link flex items-center justify-between py-4 group" data-screen="viagens">
-                        <div class="flex items-center gap-4">
-                            <span class="material-symbols-outlined text-2xl text-white/20 group-hover:text-orange-500 transition-colors">flight_takeoff</span>
-                            <span class="text-3xl font-black tracking-tighter text-white/40 group-hover:text-white italic transition-colors">VIAGENS</span>
-                        </div>
-                        <div class="active-indicator w-0 h-1 bg-orange-500 rounded-full opacity-0 transition-all duration-300"></div>
-                    </a>
-                </div>
-            </nav>
-
-            <div class="mt-auto space-y-8">
-                <div class="space-y-4">
-                    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">Contato Direto</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-white/60">
-                            <span class="material-symbols-outlined text-sm">mail</span>
-                            <span class="text-xs font-bold tracking-widest uppercase">KENJI@KNJTUR.COM</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-white/60">
-                            <span class="material-symbols-outlined text-sm">location_on</span>
-                            <span class="text-[10px] font-medium leading-relaxed uppercase tracking-wider">Indaiatuba - SP, Brasil</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex items-center gap-6 py-4 border-t border-white/5">
-                    <a href="https://www.instagram.com/knjtur" target="_blank" class="text-white/60 hover:text-orange-500 transition-colors flex items-center gap-3">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        <span class="text-xs font-bold tracking-widest uppercase">Instagram</span>
-                    </a>
-                </div>
-                
-                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="btn-whatsapp w-full py-5 rounded-2xl font-black text-center text-lg flex items-center justify-center gap-3 shadow-2xl shadow-[#009734]/10">
-                    <span class="material-symbols-outlined">chat</span>
-                    Falar com Consultor
-                </a>
-            </div>
-        </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-surface hidden flex flex-col items-center justify-center gap-8 text-2xl font-black uppercase italic tracking-tighter">
+        <a href="/" class="text-primary">Home</a>
+        <a href="/visto-americano/" class="hover:text-primary">Guia Visto</a>
+        <a href="/blog/" class="hover:text-primary">Blog</a>
+        <a href="/viagens/" class="hover:text-primary">Viagens</a>
+        <a href="https://wa.me/5511994085822" class="text-primary border-2 border-primary px-8 py-4 rounded-full">WhatsApp</a>
     </div>
 
-    <!-- Home Screen -->
-    <div id="home" class="screen active">
-        <!-- Hero -->
-        <section class="relative min-h-[90vh] flex items-center px-6 md:px-12 overflow-hidden pt-20">
-            <div class="absolute inset-0 z-0 opacity-30 pointer-events-none">
-                <div class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-orange-500/20 rounded-full blur-[160px]"></div>
-                <div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[140px]"></div>
-            </div>
-            <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
-                <div class="space-y-8">
-                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-                        <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
-                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">Consultoria Indaiatuba</span>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="absolute top-1/4 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-x-1/2"></div>
+            <div class="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] translate-x-1/2"></div>
+            
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
+                <div>
+                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-[0.2em] mb-8">
+                        <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                        Consultoria Estratégica Internacional
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
-                        Visto Americano <span class="text-gradient">Aprovado</span> com&nbsp;Segurança.
+                    <h1 class="text-5xl lg:text-7xl font-display font-black leading-[1.1] text-white mb-8 tracking-tight">
+                        Sua Ponte Segura para os <br> 
+                        <span class="text-primary italic">Estados Unidos</span>
                     </h1>
-                    <p class="text-xl text-gray-400 font-light leading-relaxed max-w-lg">
-                        Consultoria de alto padrão em Indaiatuba focada em estratégias personalizadas para maximizar sua chance de&nbsp;sucesso.
+                    <p class="text-xl text-on-surface-variant mb-12 max-w-xl leading-relaxed">
+                        Não arrisque seu futuro com preenchimentos genéricos. Oferecemos análise de perfil cirúrgica para garantir a máxima probabilidade de aprovação.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%20sobre%20a%20assessoria%20de%20vistos." class="btn-whatsapp px-10 py-5 rounded-full font-extrabold text-lg flex items-center justify-center gap-3 shadow-2xl">
-                            <span class="material-symbols-outlined">chat</span>
-                            Falar no WhatsApp
+                    <div class="flex flex-wrap gap-6">
+                        <a href="https://wa.me/5511994085822" class="bg-primary hover:bg-primary-dark text-white px-10 py-5 rounded-full text-lg font-bold flex items-center gap-3 transition-all transform hover:scale-105 shadow-2xl shadow-primary/20">
+                            Começar agora <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="/blog/" class="border border-white/10 hover:border-primary/50 text-white px-10 py-5 rounded-full text-lg font-bold transition-all backdrop-blur-sm">
+                            Ver Blog
                         </a>
                     </div>
                 </div>
-                <div class="relative hidden lg:block animate-gentle-float flex justify-center">
-                    <div class="relative z-10">
-                        <img src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR Logo" class="w-64 h-auto drop-shadow-[0_0_40px_rgba(249,115,22,0.3)]" referrerPolicy="no-referrer">
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Stats -->
-        <section class="py-24 px-6 border-y border-white/5 bg-white/[0.01]">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-                    <div class="space-y-4">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="material-symbols-outlined text-orange-500 text-3xl">groups</span>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-primary/20 rounded-[3rem] blur-3xl group-hover:bg-primary/30 transition-all"></div>
+                    <div class="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-700">
+                        <img src="https://i.ibb.co/yFDvT9MN/knj-hero.webp" alt="New York Luxury" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <!-- Trust badge -->
+                    <div class="absolute -bottom-10 -left-10 bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] flex items-center gap-5 shadow-2xl animate-float">
+                        <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-white">
+                            <i data-lucide="star" fill="white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold">+ 500 Atendidos</h3>
-                        <p class="text-gray-400 font-light">Referência sólida para viajantes que buscam excelência e confiança.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="material-symbols-outlined text-orange-500 text-3xl">verified</span>
-                        </div>
-                        <h3 class="text-2xl font-bold">Alta Aprovação</h3>
-                        <p class="text-gray-400 font-light">Análise de perfil cirúrgica para reduzir riscos e antecipar soluções.</p>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <span class="material-symbols-outlined text-orange-500 text-3xl">person_celebrate</span>
-                        </div>
-                        <h3 class="text-2xl font-bold">Personalização</h3>
-                        <p class="text-gray-400 font-light">Cada aplicação é tratada como um projeto único e exclusivo.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Problems -->
-        <section class="py-32 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="mb-20 text-center max-w-3xl mx-auto">
-                    <span class="text-[10px] uppercase tracking-[0.5em] text-orange-500 font-bold mb-6 block">Atenção</span>
-                    <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">O perigo dos&nbsp;<span class="text-gradient">detalhes</span>.</h2>
-                    <p class="text-xl text-gray-400 font-light leading-relaxed">Erros pequenos que impedem grandes&nbsp;sonhos. <br class="hidden md:block" /> Saiba onde a maioria falha:</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                            <span class="material-symbols-outlined text-orange-500">edit_document</span>
-                        </div>
-                        <h4 class="text-xl font-bold mb-4 group-hover:text-orange-500 transition-colors">Erros no DS-160</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">A base do seu processo. Dados inconsistentes são o motivo número 1 de negativas imediatas.</p>
-                    </div>
-                    <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                            <span class="material-symbols-outlined text-orange-500">record_voice_over</span>
-                        </div>
-                        <h4 class="text-xl font-bold mb-4 group-hover:text-orange-500 transition-colors">Despreparo na Entrevista</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">Nervosismo e respostas sem foco geram desconfiança. O preparo psicológico é vital.</p>
-                    </div>
-                    <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                            <span class="material-symbols-outlined text-orange-500">rule</span>
-                        </div>
-                        <h4 class="text-xl font-bold mb-4 group-hover:text-orange-500 transition-colors">Inconsistência de Dados</h4>
-                        <p class="text-gray-400 text-sm font-light leading-relaxed">Conflitos entre documentos e fala destroem sua credibilidade perante o oficial consular.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Expert -->
-        <section class="py-32 px-6">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-                <div class="relative">
-                    <div class="relative z-10 rounded-[40px] overflow-hidden border border-white/10 aspect-[4/5]">
-                        <img src="https://i.ibb.co/S4Qm249K/kenji-site.png" alt="Kenji" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
-                        <div class="absolute bottom-10 left-10">
-                            <p class="text-orange-500 font-bold tracking-[0.2em] uppercase text-xs mb-2">Fundador & Consultor Master</p>
-                            <h3 class="text-4xl font-black text-white">Kenji</h3>
-                        </div>
-                    </div>
-                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -z-10"></div>
-                </div>
-                <div class="space-y-10">
-                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20">
-                        <span class="material-symbols-outlined text-orange-500 text-sm">verified</span>
-                        <span class="text-[10px] font-black tracking-widest uppercase text-orange-500">Especialista Autoridade</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                        A expertise que faz&nbsp;a <span class="text-gradient">diferença</span> na&nbsp;aprovação.
-                    </h2>
-                    <div class="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
-                        <p>Com anos de atuação dedicados exclusivamente à consultoria de vistos, Kenji consolidou a KNJ TUR como sinônimo de rigor técnico e transparência.</p>
-                        <p>Nossa metodologia transcende o simples preenchimento de formulários; construímos uma narrativa estratégica que ressoa positivamente com as expectativas consulares.</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6 pt-6">
-                        <div class="p-6 rounded-2xl card-premium border-white/5">
-                            <span class="text-4xl font-black text-orange-500">+10</span>
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-2">Anos de Mercado</p>
-                        </div>
-                        <div class="p-6 rounded-2xl card-premium border-white/5">
-                            <span class="text-4xl font-black text-orange-500">500+</span>
-                            <p class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold mt-2">Sonhos Realizados</p>
+                        <div>
+                            <div class="text-2xl font-black text-white leading-tight">Alta Aprovação</div>
+                            <div class="text-xs text-on-surface-variant uppercase tracking-widest">Análise de Perfil Estratégica</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Stats Section -->
+        <section class="py-32 bg-surface">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-12 text-center">
+                    <div class="p-12 glass-card bg-white/5 border-none">
+                        <div class="text-5xl font-black text-primary mb-4">+500</div>
+                        <h3 class="text-xl font-bold text-white mb-2 tracking-tight">Vistos Consultados</h3>
+                        <p class="text-on-surface-variant text-sm">Assessoria completa com transparência real.</p>
+                    </div>
+                    <div class="p-12 glass-card bg-primary/5 border-primary/20">
+                        <div class="text-5xl font-black text-primary mb-4">98%</div>
+                        <h3 class="text-xl font-bold text-white mb-2 tracking-tight">Índice de Qualidade</h3>
+                        <p class="text-on-surface-variant text-sm">Foco absoluto na estratégia de aprovação.</p>
+                    </div>
+                    <div class="p-12 glass-card bg-white/5 border-none">
+                        <div class="text-5xl font-black text-primary mb-4">Global</div>
+                        <h3 class="text-xl font-bold text-white mb-2 tracking-tight">Suporte Internacional</h3>
+                        <p class="text-on-surface-variant text-sm">Atendimento em qualquer lugar do mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    </div>
+        <!-- Services Section -->
+        <section class="py-32 bg-surface-variant/30 relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-display font-black text-white mb-6">Nossos Diferenciais</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto">Excelência técnica e atendimento premium para quem não aceita menos que a aprovação.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group p-10 rounded-[2.5rem] bg-surface-variant/50 border border-white/5 hover:border-primary/30 transition-all text-center">
+                        <div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                            <i data-lucide="plane" class="text-primary" size="32"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6 tracking-tight">Planejamento Total</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8">Da escolha da melhor data ao simulado de entrevista, cuidamos de cada vírgula do seu processo.</p>
+                        <a href="/consultoria/" class="text-primary font-bold uppercase tracking-widest text-xs hover:underline decoration-2 underline-offset-8">Saiba Mais</a>
+                    </div>
+                    
+                    <div class="group p-10 rounded-[2.5rem] bg-surface-variant/50 border border-white/5 hover:border-primary/30 transition-all text-center">
+                        <div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                            <i data-lucide="shield-check" class="text-primary" size="32"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6 tracking-tight">Perfil Blindado</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8">Identificamos gaps em sua documentação e sugerimos melhorias reais para sua entrevista.</p>
+                        <a href="/visto-americano/" class="text-primary font-bold uppercase tracking-widest text-xs hover:underline decoration-2 underline-offset-8">Saiba Mais</a>
+                    </div>
 
-    <!-- Viagens Screen -->
-    <div id="viagens" class="screen">
-        <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
-            <section class="mb-24 text-center">
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                    Sua Viagem&nbsp;<span class="text-gradient">Completa</span>
-                </h1>
-                <p class="text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">
-                    Da emissão do visto ao desembarque no seu destino final. Oferecemos uma curadoria completa para que sua única preocupação seja&nbsp;aproveitar.
+                    <div class="group p-10 rounded-[2.5rem] bg-surface-variant/50 border border-white/5 hover:border-primary/30 transition-all text-center">
+                        <div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                            <i data-lucide="user-check" class="text-primary" size="32"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6 tracking-tight">Simulados VIP</h3>
+                        <p class="text-on-surface-variant leading-relaxed mb-8">Treinamento direto com especialistas que conhecem o vocabulário e a postura exigida.</p>
+                        <a href="/visto-americano/" class="text-primary font-bold uppercase tracking-widest text-xs hover:underline decoration-2 underline-offset-8">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-40 bg-surface">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-display font-black text-white mb-12">Educamos para a <br> <span class="text-primary italic tracking-tight">Aprovação</span></h2>
+                <p class="text-on-surface-variant text-xl mb-16 max-w-2xl mx-auto leading-relaxed">
+                    Acreditamos que um cliente bem informado é um cliente com maiores chances. Acesse nosso blog exclusivo.
                 </p>
-                <div class="mt-12">
-                    <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20viagem." class="btn-whatsapp px-12 py-5 rounded-full font-black text-lg inline-flex items-center gap-3 shadow-2xl hover:scale-105 transition-transform">
-                        <span class="material-symbols-outlined">chat</span>
-                        SOLICITAR COTAÇÃO VIA WHATSAPP
-                    </a>
-                </div>
-            </section>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-                <!-- Passagens -->
-                <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">flight_takeoff</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Passagens Aéreas</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Tarifas exclusivas e as melhores rotas para qualquer lugar do mundo, com foco em conforto e custo-benefício.</p>
-                </div>
-
-                <!-- Hospedagem -->
-                <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">apartment</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Hospedagem</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Seleção de hotéis de luxo, resorts e acomodações boutique que atendem aos mais altos padrões de exigência.</p>
-                </div>
-
-                <!-- Traslado -->
-                <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">airport_shuttle</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Traslado</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Segurança e pontualidade no seu transporte do aeroporto ao hotel e entre seus destinos de passeio.</p>
-                </div>
-
-                <!-- Aluguel de Veículos -->
-                <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">directions_car</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Aluguel de Veículos</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">De compactos a modelos de luxo e esportivos. Liberdade total para explorar seu destino com o carro ideal.</p>
-                </div>
-
-                <!-- Pacotes Completos -->
-                <div class="p-10 rounded-3xl card-premium border-white/5 hover:border-orange-500/20 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-8 group-hover:bg-orange-500/20 transition-colors">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">inventory_2</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Pacotes Completos</h3>
-                    <p class="text-gray-400 font-light leading-relaxed">Roteiros personalizados que incluem tudo: voos, estadias, passeios e suporte 24h durante a viagem.</p>
-                </div>
-
-                <!-- Consultoria -->
-                <div class="p-10 rounded-3xl bg-gradient-to-br from-orange-500/20 to-transparent border border-orange-500/20 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Planejamento Sob Medida</h3>
-                        <p class="text-gray-300 font-light text-sm leading-relaxed">Não encontrou o que procurava? Nossa equipe desenha o roteiro dos seus sonhos do zero.</p>
-                    </div>
-                    <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%20sobre%20cota%C3%A7%C3%A3o%20de%20viagens%20e%20pacotes." class="btn-whatsapp py-4 rounded-xl font-black text-center mt-8 flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined">chat</span>
-                        Solicitar Orçamento
-                    </a>
-                </div>
+                <a href="/blog/" class="inline-flex items-center gap-4 text-white text-2xl font-black uppercase italic tracking-tighter group hover:text-primary transition-colors">
+                    Acessar Central de Conteúdo <i data-lucide="arrow-right" class="group-hover:translate-x-4 transition-transform text-primary" size="32"></i>
+                </a>
             </div>
-
-
-
-            <!-- CTA Section -->
-            <section class="relative rounded-[40px] overflow-hidden p-12 md:p-24 text-center border border-white/10">
-                <div class="absolute inset-0 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoqnOJ0P0xjDs-LswEvCX_9NGpLczFO12I_G91T67Ri3gUfeCLzJii63FC6CpM0o9HYv6PMp2C1sJiVhiXu0niZgnI22U9vgzMMmnqq-wy7PA3RiITeKHMpWE1Tt7xUKt8k7bQ16Gsd3leTrUc2ausdtKKuq2wiwLZtILVMFeHtN_KMGUH9eIdDYEVk_PIelW8SzqgWpS953Qg8Hiwu_2lIy2Wn60j5dUPb8EZW4QopvBJ6jMmsCSQyy3DEUPqtleVfFUGQqtCazQO')] bg-cover bg-center opacity-20"></div>
-                <div class="relative z-10">
-                    <h2 class="text-4xl md:text-6xl font-extrabold mb-8">O mundo espera por&nbsp;você.</h2>
-                    <p class="text-xl text-gray-300 font-light mb-12 max-w-2xl mx-auto">Combinamos nossa expertise em vistos com o melhor do turismo global para garantir que sua experiência seja&nbsp;impecável.</p>
-                    <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%20sobre%20cota%C3%A7%C3%A3o%20de%20viagens%20e%20pacotes." class="btn-whatsapp px-12 py-6 rounded-full font-black text-xl shadow-2xl inline-flex items-center gap-4">
-                        <span class="material-symbols-outlined">chat</span>
-                        Começar Planejamento
-                    </a>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Blog Screen -->
-    <div id="blog" class="screen">
-        <main class="pt-32 pb-20 px-6 max-w-5xl mx-auto">
-            <!-- Blog Index (List Mode) -->
-            <div id="blog-index">
-                <div class="mb-16">
-                    <span class="text-orange-500 uppercase tracking-[0.3em] text-xs mb-4 block font-bold">Conteúdo Exclusivo</span>
-                    <h1 class="text-5xl md:text-7xl font-black mb-6">Blog <span class="text-gradient">KNJ TUR</span></h1>
-                    <p class="text-xl text-gray-400 font-light max-w-2xl">
-                        Dicas práticas, guias e atualizações críticas sobre vistos e viagens internacionais.
-                    </p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Post Card: EES -->
-                    <div class="card-premium p-6 rounded-3xl cursor-pointer hover:border-orange-500/50 transition-all group" onclick="showBlogPost('post-ees')">
-                        <div class="rounded-2xl overflow-hidden mb-6 aspect-video relative">
-                            <img src="https://i.ibb.co/DDRPyddL/filas.webp" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <span class="text-orange-500 font-bold text-[10px] uppercase tracking-widest bg-orange-500/10 px-3 py-1 rounded-full">Informativo Europa 2026</span>
-                                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">20 ABR 2026</span>
-                            </div>
-                            <h3 class="text-xl font-bold leading-tight group-hover:text-orange-500 transition-colors">Filas de 3 horas na Europa: Entenda o novo sistema EES</h3>
-                            <p class="text-gray-400 text-sm line-clamp-2">A União Europeia implementou o controle biométrico obrigatório. Saiba como evitar atrasos críticos.</p>
-                            <div class="pt-2 flex items-center gap-2 text-white font-bold text-sm">
-                                Ler artigo completo
-                                <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post Card: EES Passo a Passo -->
-                    <div class="card-premium p-6 rounded-3xl cursor-pointer hover:border-orange-500/50 transition-all group" onclick="showBlogPost('post-ees-passo-a-passo')">
-                        <div class="rounded-2xl overflow-hidden mb-6 aspect-video relative">
-                            <img src="https://i.ibb.co/G41sDLxk/europaees-3.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <span class="text-orange-500 font-bold text-[10px] uppercase tracking-widest bg-orange-500/10 px-3 py-1 rounded-full">Guia Prático</span>
-                                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">20 ABR 2026</span>
-                            </div>
-                            <h3 class="text-xl font-bold leading-tight group-hover:text-orange-500 transition-colors">Procedimento do EES: Passo a passo completo na imigração</h3>
-                            <p class="text-gray-400 text-sm line-clamp-2">Saiba exatamente o que acontece quando você chega ao aeroporto na Europa com o novo sistema.</p>
-                            <div class="pt-2 flex items-center gap-2 text-white font-bold text-sm">
-                                Ver guia completo
-                                <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post Card: Ingles -->
-                    <div class="card-premium p-6 rounded-3xl cursor-pointer hover:border-orange-500/50 transition-all group" onclick="showBlogPost('post-ingles')">
-                        <div class="rounded-2xl overflow-hidden mb-6 aspect-video relative">
-                            <img src="https://i.ibb.co/V0DGLZ0b/visto-header-01-1.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <span class="text-orange-500 font-bold text-[10px] uppercase tracking-widest bg-orange-500/10 px-3 py-1 rounded-full">Especialista em Vistos</span>
-                                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">15 MAR 2026</span>
-                            </div>
-                            <h3 class="text-2xl font-bold leading-tight group-hover:text-orange-500 transition-colors">Precisa falar inglês para tirar o visto americano?</h3>
-                            <p class="text-gray-400 text-sm line-clamp-2">Desvendamos o mito da fluência obrigatória no consulado americano e o que realmente importa.</p>
-                            <div class="pt-2 flex items-center gap-2 text-white font-bold text-sm">
-                                Ler artigo completo
-                                <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Post Content Viewer -->
-            <div id="blog-content" class="hidden">
-                <div class="flex items-center justify-between mb-12">
-                    <button onclick="hideBlogPost()" class="flex items-center gap-2 text-orange-500 font-bold hover:translate-x-[-4px] transition-transform group">
-                        <span class="material-symbols-outlined">arrow_back</span>
-                        Voltar ao Blog
-                    </button>
-                    <button onclick="shareArticle()" class="flex items-center gap-2 text-white/40 hover:text-orange-500 transition-all px-4 py-2 rounded-full border border-white/5 hover:border-orange-500/20 bg-white/5">
-                        <span class="material-symbols-outlined text-sm">share</span>
-                        <span class="text-[10px] font-bold uppercase tracking-widest">Compartilhar</span>
-                    </button>
-                </div>
-
-                <!-- Post 1: EES -->
-                <article id="post-ees" class="blog-post hidden">
-                    <section class="mb-16">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="text-orange-500 uppercase tracking-[0.3em] text-xs font-bold">Informativo Europa 2026</span>
-                            <span class="w-1 h-1 rounded-full bg-white/20"></span>
-                            <span class="text-gray-500 uppercase tracking-[0.3em] text-xs font-bold">20 de Abril, 2026</span>
-                        </div>
-                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-8">
-                            🚨 Filas de até 3 horas na Europa: <span class="text-gradient">entenda o sistema EES</span>
-                        </h1>
-                        <p class="text-xl text-gray-400 font-light leading-relaxed mb-10">
-                            Se você está planejando viajar para a Europa em 2026, precisa entender uma mudança crítica: o novo sistema de controle de fronteiras já está impactando aeroportos.
-                        </p>
-                        <div class="w-full aspect-[21/9] relative rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="https://i.ibb.co/DDRPyddL/filas.webp" alt="Filas Europa" class="object-cover w-full h-full" referrerPolicy="no-referrer">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
-                        </div>
-                    </section>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                        <div class="lg:col-span-8 space-y-10">
-                            <div class="card-premium p-8 md:p-10 rounded-2xl border border-white/5">
-                                <h2 class="text-2xl font-bold mb-6 text-orange-500 flex items-center gap-3">
-                                    <span class="material-symbols-outlined">badge</span>
-                                    O que é o sistema EES?
-                                </h2>
-                                <div class="space-y-6 text-lg text-gray-400 leading-relaxed">
-                                    <p>O <strong>Entry/Exit System (EES)</strong> é o novo sistema digital da União Europeia que substitui o carimbo manual no passaporte por um controle biométrico automatizado.</p>
-                                    <p>Ele se aplica a viajantes de fora da União Europeia — incluindo brasileiros — que permanecem por até 90 dias no Espaço Schengen.</p>
-                                    <div class="p-6 bg-white/5 rounded-xl border-l-4 border-orange-500 italic text-white space-y-2">
-                                        <p>• Coleta de impressões digitais e foto facial</p>
-                                        <p>• Registro digital da entrada e saída</p>
-                                        <p>• Eliminação do carimbo físico no passaporte</p>
-                                    </div>
-                                    <p class="text-sm">📌 <strong>Importante:</strong> Os dados biométricos ficam válidos por 3 anos, o que torna as próximas viagens muito mais rápidas.</p>
-                                </div>
-                            </div>
-
-                            <div class="bg-white/[0.02] p-8 md:p-10 rounded-2xl border border-white/5">
-                                <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-red-500">warning</span>
-                                    Por que as filas estão tão longas?
-                                </h3>
-                                <p class="text-gray-400 mb-8">A realidade nos aeroportos europeus é de gargalo operacional em locais como Lisboa, Paris e Frankfurt:</p>
-                                <ul class="space-y-6">
-                                    <li class="flex gap-4 items-start">
-                                        <span class="w-8 h-8 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 text-xs font-bold">1</span>
-                                        <div>
-                                            <strong class="text-white block mb-1">Primeiro cadastro demorado</strong>
-                                            <span class="text-gray-400 text-sm">O registro biométrico pode aumentar o tempo de atendimento em até 70% por passageiro.</span>
-                                        </div>
-                                    </li>
-                                    <li class="flex gap-4 items-start">
-                                        <span class="w-8 h-8 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center shrink-0 text-xs font-bold">2</span>
-                                        <div>
-                                            <strong class="text-white block mb-1">Infraestrutura insuficiente</strong>
-                                            <span class="text-gray-400 text-sm">Muitos aeroportos ainda não têm totens suficientes para o fluxo atual.</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="card-premium p-8 md:p-10 rounded-2xl border border-white/5">
-                                <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-orange-500">
-                                    <span class="material-symbols-outlined">bolt</span>
-                                    Como evitar atrasos e não perder conexão
-                                </h3>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div class="p-6 bg-white/5 rounded-2xl">
-                                        <h4 class="text-white font-bold mb-2 flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-orange-500 text-sm">qr_code</span>
-                                            Pré-cadastro
-                                        </h4>
-                                        <p class="text-gray-400 text-xs leading-relaxed">Use apps oficiais como o Travel Europe para enviar dados antecipadamente.</p>
-                                    </div>
-                                    <div class="p-6 bg-white/5 rounded-2xl">
-                                        <h4 class="text-white font-bold mb-2 flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-orange-500 text-sm">print</span>
-                                            Documentos fìsicos
-                                        </h4>
-                                        <p class="text-gray-400 text-xs leading-relaxed">Tenha em mãos reserva de hotel e seguro viagem para casos de falha no sistema.</p>
-                                    </div>
-                                    <div class="p-6 bg-white/5 rounded-2xl sm:col-span-2">
-                                        <h4 class="text-white font-bold mb-2 flex items-center gap-2">
-                                            <span class="material-symbols-outlined text-orange-500 text-sm">timer</span>
-                                            Conexões com folga
-                                        </h4>
-                                        <p class="text-gray-400 text-xs leading-relaxed">Recomendamos no mínimo <strong>4 horas</strong> entre voos dentro da Europa em 2026.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Link Interno Estratégico -->
-                            <div class="p-8 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex flex-col sm:flex-row items-center gap-6 group cursor-pointer" onclick="showBlogPost('post-ees-passo-a-passo')">
-                                <div class="w-16 h-16 rounded-xl bg-orange-500 flex items-center justify-center shrink-0 shadow-lg shadow-orange-500/20">
-                                    <span class="material-symbols-outlined text-3xl text-black font-bold">list_alt</span>
-                                </div>
-                                <div class="text-center sm:text-left">
-                                    <h4 class="text-lg font-bold text-white mb-1">Passo a passo da imigração</h4>
-                                    <p class="text-sm text-gray-400">Veja exatamente o que acontece no totem e com o agente de fronteira.</p>
-                                </div>
-                                <span class="material-symbols-outlined text-orange-500 ml-auto transition-transform group-hover:translate-x-2">arrow_forward</span>
-                            </div>
-
-                            <!-- CTA WhatsApp -->
-                            <div class="mt-16 p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 shadow-2xl shadow-orange-500/20 text-black flex flex-col md:flex-row items-center justify-between gap-8">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-2xl font-black mb-2 uppercase tracking-tight">Planeje sua próxima viagem</h3>
-                                    <p class="font-medium opacity-80">Solicite uma cotação personalizada e viaje com segurança.</p>
-                                </div>
-                                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Li%20o%20artigo%20sobre%20filas%20e%20atrasos%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o." target="_blank" class="bg-black text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 transition-all flex items-center gap-2 shrink-0">
-                                    <span class="material-symbols-outlined">chat</span>
-                                    Cotar com a KNJ
-                                </a>
-                            </div>
-
-                            <!-- Assinatura Kenji -->
-                            <div class="mt-16 pt-10 border-t border-white/5 flex items-center gap-6">
-                                <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-orange-500/30 shadow-xl">
-                                    <img src="https://i.ibb.co/S4Qm249K/kenji-site.png" alt="Kenji" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                                </div>
-                                <div>
-                                    <p class="text-[10px] text-orange-500 uppercase tracking-[0.3em] font-bold mb-1">Autor do Artigo</p>
-                                    <h4 class="text-2xl font-black text-white">Kenji</h4>
-                                    <p class="text-sm text-gray-400 font-light">Especialista em Vistos e Fundador da KNJ TUR</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Post 1.1: EES Passo a Passo -->
-                <article id="post-ees-passo-a-passo" class="blog-post hidden">
-                    <section class="mb-16">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="text-orange-500 uppercase tracking-[0.3em] text-xs font-bold">Guia Prático</span>
-                            <span class="w-1 h-1 rounded-full bg-white/20"></span>
-                            <span class="text-gray-500 uppercase tracking-[0.3em] text-xs font-bold">20 de Abril, 2026</span>
-                        </div>
-                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-8">
-                            🛂 Procedimento do EES na Europa: <span class="text-gradient">passo a passo completo na imigração</span> (2026)
-                        </h1>
-                        <p class="text-xl text-gray-400 font-light leading-relaxed mb-10">
-                            Se você vai viajar para a Europa em 2026, entender o novo controle de fronteiras é essencial para evitar filas, atrasos e até perda de conexão. O <strong>Entry/Exit System (EES)</strong> já está em vigor e mudou completamente a forma como turistas entram no continente.
-                        </p>
-                        <div class="w-full aspect-[21/9] relative rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="https://i.ibb.co/G41sDLxk/europaees-3.png" alt="Procedimento EES" class="object-cover w-full h-full" referrerPolicy="no-referrer">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
-                        </div>
-                        <p class="mt-8 text-gray-400 text-lg">Neste guia da <strong>knjtur.com</strong>, você verá <strong>o que é o EES, para que serve, a diferença para o ETIAS e o passo a passo completo dentro do aeroporto</strong>.</p>
-                    </section>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                        <div class="lg:col-span-8 space-y-12">
-                            <section class="space-y-6">
-                                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-orange-500">info</span>
-                                    ✈️ O que é o EES e para que serve?
-                                </h2>
-                                <p class="text-lg text-gray-400 leading-relaxed">
-                                    O EES (Entry/Exit System) é o novo sistema digital da União Europeia que substitui o carimbo manual no passaporte. Agora, ao entrar na Europa, o viajante precisa registrar:
-                                </p>
-                                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                    <li class="p-4 bg-white/5 rounded-xl border border-white/10 text-sm flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-orange-500">fingerprint</span> Impressões digitais
-                                    </li>
-                                    <li class="p-4 bg-white/5 rounded-xl border border-white/10 text-sm flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-orange-500">face</span> Foto facial
-                                    </li>
-                                    <li class="p-4 bg-white/5 rounded-xl border border-white/10 text-sm flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-orange-500">flight_takeoff</span> Dados da viagem
-                                    </li>
-                                </ul>
-                                <p class="text-gray-400">
-                                    👉 <strong>Objetivo:</strong> aumentar o controle migratório e evitar permanência irregular no Espaço Schengen. O sistema se aplica a turistas de fora da União Europeia — incluindo brasileiros.
-                                </p>
-                            </section>
-
-                            <section class="space-y-6">
-                                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-orange-500">compare_arrows</span>
-                                    🆚 Diferença entre EES e ETIAS
-                                </h2>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div class="p-8 rounded-2xl bg-blue-500/5 border border-blue-500/20">
-                                        <h3 class="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
-                                            <span class="w-3 h-3 rounded-full bg-blue-500"></span> 🔵 EES (já em vigor)
-                                        </h3>
-                                        <ul class="space-y-2 text-sm text-gray-400">
-                                            <li>• Registro feito <strong>na chegada</strong></li>
-                                            <li>• Coleta de <strong>biometria</strong></li>
-                                            <li>• Gratuito</li>
-                                            <li>• Obrigatório</li>
-                                        </ul>
-                                    </div>
-                                    <div class="p-8 rounded-2xl bg-yellow-500/5 border border-yellow-500/20">
-                                        <h3 class="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2">
-                                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span> 🟡 ETIAS (em breve)
-                                        </h3>
-                                        <ul class="space-y-2 text-sm text-gray-400">
-                                            <li>• Autorização <strong>antes</strong> da viagem</li>
-                                            <li>• Preenchido online</li>
-                                            <li>• Custo de ~7 euros</li>
-                                            <li>• Previsto para o final de 2026</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10">
-                                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-orange-500">smartphone</span>
-                                    📱 Existe pré-cadastro do EES?
-                                </h2>
-                                <p class="text-gray-400 text-lg">
-                                    Sim — mas não da forma que muitos imaginam. O registro principal ainda acontece no aeroporto, mas a UE disponibilizou o app oficial: <strong>Travel to Europe</strong>.
-                                </p>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
-                                    <div class="space-y-3">
-                                        <h4 class="text-white font-bold">O que ele permite:</h4>
-                                        <ul class="text-sm text-gray-400 space-y-2">
-                                            <li>• Enviar dados do passaporte antes</li>
-                                            <li>• Tirar foto facial antecipadamente</li>
-                                            <li>• Preencher informações de entrada</li>
-                                            <li>• Agilizar o processo no totem</li>
-                                        </ul>
-                                    </div>
-                                    <div class="p-4 bg-orange-500/10 rounded-xl border border-orange-500/20">
-                                        <p class="text-xs text-orange-500 font-bold mb-2 uppercase tracking-widest">⚠️ Atenção</p>
-                                        <p class="text-xs text-gray-400 leading-relaxed">
-                                            O pré-cadastro (até 72h antes) é opcional, nem todos os países utilizam ainda e <strong>não substitui</strong> a imigração presencial.
-                                        </p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="card-premium p-8 rounded-2xl bg-orange-500/5">
-                                <h2 class="text-2xl font-bold mb-6 text-orange-500">Resumo rápido (Featured Snippet)</h2>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-300">
-                                    <div>1. Chegada ao aeroporto europeu</div>
-                                    <div>2. Fila de imigração (não-UE)</div>
-                                    <div>3. Uso do totem de autoatendimento</div>
-                                    <div>4. Coleta de biometria</div>
-                                    <div>5. Validação com agente</div>
-                                    <div>6. Liberação de entrada</div>
-                                </div>
-                                <p class="mt-8 text-sm text-white font-bold flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-orange-500">timer</span>
-                                    📌 Tempo médio: 30 minutos a até 3 horas
-                                </p>
-                            </section>
-
-                            <section class="space-y-10">
-                                <h2 class="text-3xl font-bold text-white mb-8">✈️ Passo a passo do procedimento do EES</h2>
-                                
-                                <div class="relative pl-8 border-l-2 border-white/5 space-y-16">
-                                    <!-- Step 1 -->
-                                    <div class="relative">
-                                        <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-orange-500 border-4 border-[#0B0F14]"></div>
-                                        <h3 class="text-xl font-bold text-white mb-4">1. Chegada ao aeroporto na Europa</h3>
-                                        <p class="text-gray-400">Após desembarcar, siga para a área de <strong>Border Control (imigração)</strong>. Aqui você já poderá encontrar filas maiores devido ao novo sistema.</p>
-                                    </div>
-
-                                    <!-- Step 2 -->
-                                    <div class="relative">
-                                        <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-orange-500 border-4 border-[#0B0F14]"></div>
-                                        <h3 class="text-xl font-bold text-white mb-4">2. Separação por tipo de passageiro</h3>
-                                        <p class="text-gray-400">Você verá duas filas principais: Cidadãos da UE e Estrangeiros (inclui brasileiros). O EES se aplica apenas à fila de estrangeiros.</p>
-                                    </div>
-
-                                    <!-- Step 3 -->
-                                    <div class="relative">
-                                        <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-orange-500 border-4 border-[#0B0F14]"></div>
-                                        <h3 class="text-xl font-bold text-white mb-4 text-orange-500">3. Uso do totem de autoatendimento</h3>
-                                        <p class="text-gray-400">Antes de falar com o agente, você deverá usar um terminal eletrônico. No totem, escaneie o passaporte, confirme seus dados e siga as instruções na tela.</p>
-                                    </div>
-
-                                    <!-- Step 4 -->
-                                    <div class="relative">
-                                        <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-orange-500 border-4 border-[#0B0F14]"></div>
-                                        <h3 class="text-xl font-bold text-white mb-4">4. Coleta de biometria</h3>
-                                        <p class="text-gray-400">Essa é a principal mudança: registro de impressões digitais e captura de foto facial. 📌 Esse processo substitui o carimbo físico.</p>
-                                    </div>
-
-                                    <!-- Step 5 -->
-                                    <div class="relative">
-                                        <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-orange-500 border-4 border-[#0B0F14]"></div>
-                                        <h3 class="text-xl font-bold text-white mb-4">5. Validação com agente de imigração</h3>
-                                        <p class="text-gray-400">Depois do totem, um agente pode solicitar: motivo da viagem, reserva de hospedagem, passagem de volta e seguro viagem.</p>
-                                    </div>
-
-                                    <!-- Step 6 -->
-                                    <div class="relative">
-                                        <div class="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0B0F14]"></div>
-                                        <h3 class="text-xl font-bold text-green-500 mb-4">6. Liberação de entrada</h3>
-                                        <p class="text-gray-400">Se tudo estiver correto, sua entrada é registrada digitalmente e o acesso é liberado ao país. 📌 Não há mais carimbo físico.</p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="p-8 rounded-2xl bg-white/5 border border-white/10">
-                                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-orange-500">schedule</span> ⏱️ Quanto tempo demora?
-                                    </h3>
-                                    <ul class="space-y-4 text-sm">
-                                        <li class="flex items-center gap-3">
-                                            <span class="w-3 h-3 rounded-full bg-green-500"></span> 🟢 20–30 min (melhor cenário)
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span> 🟡 40–90 min (normal)
-                                        </li>
-                                        <li class="flex items-center gap-3">
-                                            <span class="w-3 h-3 rounded-full bg-red-500"></span> 🔴 Até 3 horas (picos)
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="p-8 rounded-2xl bg-red-500/5 border border-red-500/20">
-                                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-red-500">warning</span> ⚠️ O que causa atraso
-                                    </h3>
-                                    <ul class="space-y-2 text-sm text-gray-400">
-                                        <li>• Falha na leitura do passaporte</li>
-                                        <li>• Problemas no reconhecimento facial</li>
-                                        <li>• Filas nos totens</li>
-                                        <li>• Instabilidade do sistema</li>
-                                    </ul>
-                                </div>
-                            </section>
-
-                            <section class="card-premium p-8 rounded-2xl">
-                                <h3 class="text-xl font-bold text-orange-500 mb-6 flex items-center gap-2">
-                                    <span class="material-symbols-outlined">bolt</span> ⚡ Como passar mais rápido
-                                </h3>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div class="p-4 bg-white/5 rounded-xl text-xs text-gray-400 flex items-center gap-2">✔ Use passaporte biométrico</div>
-                                    <div class="p-4 bg-white/5 rounded-xl text-xs text-gray-400 flex items-center gap-2">✔ Leve documentos impressos</div>
-                                    <div class="p-4 bg-white/5 rounded-xl text-xs text-gray-400 flex items-center gap-2">✔ Evite conexões curtas (min 4h)</div>
-                                    <div class="p-4 bg-white/5 rounded-xl text-xs text-gray-400 flex items-center gap-2">✔ Use pré-cadastro se disponível</div>
-                                </div>
-                            </section>
-
-                            <section class="space-y-8">
-                                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-orange-500">help</span>
-                                    ❓ FAQ (Perguntas Frequentes)
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <p class="text-white font-bold mb-2">O EES é obrigatório?</p>
-                                        <p class="text-gray-400 text-sm">Sim, para todos os viajantes de fora da UE.</p>
-                                    </div>
-                                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <p class="text-white font-bold mb-2">Precisa pagar?</p>
-                                        <p class="text-gray-400 text-sm">Não, é gratuito.</p>
-                                    </div>
-                                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <p class="text-white font-bold mb-2">Preciso fazer toda vez?</p>
-                                        <p class="text-gray-400 text-sm">Não. O cadastro vale por até 3 anos.</p>
-                                    </div>
-                                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <p class="text-white font-bold mb-2">Brasileiros precisam?</p>
-                                        <p class="text-gray-400 text-sm">Sim.</p>
-                                    </div>
-                                    <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
-                                        <p class="text-white font-bold mb-2">Substitui o ETIAS?</p>
-                                        <p class="text-gray-400 text-sm">Não. São sistemas diferentes.</p>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="pt-8 border-t border-white/5">
-                                <h2 class="text-2xl font-bold text-white mb-6">🌍 Conclusão</h2>
-                                <p class="text-gray-400 text-lg leading-relaxed">
-                                    O EES veio para modernizar a entrada na Europa, mas ainda está em fase de adaptação — o que explica filas e atrasos. Quem entende o processo e se prepara sai na frente e evita dor de cabeça.
-                                </p>
-                            </section>
-
-                            <!-- Link Interno Estratégico -->
-                            <div class="p-8 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex flex-col sm:flex-row items-center gap-6 group cursor-pointer" onclick="showBlogPost('post-ees')">
-                                <div class="w-16 h-16 rounded-xl bg-orange-500 flex items-center justify-center shrink-0 shadow-lg shadow-orange-500/20">
-                                    <span class="material-symbols-outlined text-3xl text-black font-bold">warning</span>
-                                </div>
-                                <div class="text-center sm:text-left">
-                                    <h4 class="text-lg font-bold text-white mb-1">Leia também</h4>
-                                    <p class="text-sm text-gray-400">Filas de até 3 horas na Europa: entenda o sistema EES e como evitar atrasos.</p>
-                                </div>
-                                <span class="material-symbols-outlined text-orange-500 ml-auto transition-transform group-hover:translate-x-2">arrow_forward</span>
-                            </div>
-
-                            <!-- CTA WhatsApp -->
-                            <div class="mt-16 p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 shadow-2xl shadow-orange-500/20 text-black flex flex-col md:flex-row items-center justify-between gap-8">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-2xl font-black mb-2 uppercase tracking-tight">Planeje sua próxima viagem</h3>
-                                    <p class="font-medium opacity-80">Solicite uma cotação personalizada e viaje com segurança.</p>
-                                </div>
-                                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Li%20o%20guia%20do%20EES%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o." target="_blank" class="bg-black text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 transition-all flex items-center gap-2 shrink-0">
-                                    <span class="material-symbols-outlined">chat</span>
-                                    Cotar com a KNJ
-                                </a>
-                            </div>
-
-                            <!-- Assinatura Kenji -->
-                            <div class="mt-16 pt-10 border-t border-white/5 flex items-center gap-6">
-                                <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-orange-500/30 shadow-xl">
-                                    <img src="https://i.ibb.co/S4Qm249K/kenji-site.png" alt="Kenji" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                                </div>
-                                <div>
-                                    <p class="text-[10px] text-orange-500 uppercase tracking-[0.3em] font-bold mb-1">Autor do Artigo</p>
-                                    <h4 class="text-2xl font-black text-white">Kenji</h4>
-                                    <p class="text-sm text-gray-400 font-light">Especialista em Vistos e Fundador da KNJ TUR</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Info -->
-                        <aside class="lg:col-span-4 space-y-8">
-                            <div class="card-premium p-8 rounded-2xl border border-white/5 sticky top-32">
-                                <h4 class="text-orange-500 font-bold uppercase tracking-widest text-[10px] mb-6">Informações Críticas</h4>
-                                <div class="space-y-6">
-                                    <div class="flex gap-4">
-                                        <span class="material-symbols-outlined text-orange-500 shrink-0">event</span>
-                                        <div>
-                                            <p class="text-xs text-white font-bold">Vigência</p>
-                                            <p class="text-[10px] text-gray-400">Já em vigor (2026)</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-4">
-                                        <span class="material-symbols-outlined text-orange-500 shrink-0">public</span>
-                                        <div>
-                                            <p class="text-xs text-white font-bold">Países</p>
-                                            <p class="text-[10px] text-gray-400">Espaço Schengen</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-4">
-                                        <span class="material-symbols-outlined text-orange-500 shrink-0">verified</span>
-                                        <div>
-                                            <p class="text-xs text-white font-bold">Status</p>
-                                            <p class="text-[10px] text-gray-400">Obrigatório para brasileiros</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                </article>
-
-                <!-- Post 2: Ingles -->
-                <article id="post-ingles" class="blog-post hidden">
-                    <section class="mb-16">
-                        <div class="flex items-center gap-4 mb-4">
-                            <span class="text-orange-500 uppercase tracking-[0.3em] text-xs font-bold">Especialista em Vistos</span>
-                            <span class="w-1 h-1 rounded-full bg-white/20"></span>
-                            <span class="text-gray-500 uppercase tracking-[0.3em] text-xs font-bold">15 de Março, 2026</span>
-                        </div>
-                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-8">
-                            Precisa falar inglês para tirar o <span class="text-gradient">visto americano?</span>
-                        </h1>
-                        <p class="text-xl text-gray-400 font-light leading-relaxed mb-10">
-                            A dúvida mais comum entre brasileiros que sonham em visitar os Estados Unidos. Desvendamos o mito da fluência obrigatória no consulado.
-                        </p>
-                        <div class="w-full aspect-[21/9] relative rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="https://i.ibb.co/V0DGLZ0b/visto-header-01-1.jpg" alt="Consulado" class="object-cover w-full h-full" referrerPolicy="no-referrer">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F14] via-transparent to-transparent"></div>
-                        </div>
-                    </section>
-    
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                        <div class="lg:col-span-8 space-y-10">
-                            <div class="card-premium p-8 md:p-10 rounded-2xl border border-white/5">
-                                <h2 class="text-2xl font-bold mb-6 text-orange-500 flex items-center gap-3">
-                                    <span class="material-symbols-outlined">verified</span>
-                                    O veredito oficial
-                                </h2>
-                                <div class="space-y-6 text-lg text-gray-400 leading-relaxed">
-                                    <p>A resposta curta e direta é: <strong class="text-white">Não</strong>. A entrevista pode ser feita inteiramente em português.</p>
-                                    <p>O consulado americano no Brasil conta com oficiais consulares que falam português fluentemente. O objetivo principal da entrevista não é avaliar sua capacidade linguística, mas sim <span class="italic text-white">avaliar seu perfil, seus vínculos com o Brasil e a veracidade das suas intenções de viagem</span>.</p>
-                                    <blockquote class="p-6 bg-white/5 rounded-xl border-l-4 border-orange-500 italic text-white">
-                                        "O consulado avalia seu perfil socioeconômico e não sua fluência no idioma."
-                                    </blockquote>
-                                </div>
-                            </div>
-    
-                            <div class="bg-white/[0.02] p-8 md:p-10 rounded-2xl border border-white/5">
-                                <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-red-500">warning</span>
-                                    Erros que você deve evitar
-                                </h3>
-                                <ul class="space-y-4">
-                                    <li class="flex gap-4 items-start">
-                                        <span class="material-symbols-outlined text-red-500 text-lg">close</span>
-                                        <span class="text-gray-400">Achar que a falta de inglês resultará em uma negativa automática.</span>
-                                    </li>
-                                    <li class="flex gap-4 items-start">
-                                        <span class="material-symbols-outlined text-red-500 text-lg">close</span>
-                                        <span class="text-gray-400">Tentar forçar um inglês básico se você não se sente confortável. Isso gera insegurança.</span>
-                                    </li>
-                                    <li class="flex gap-4 items-start">
-                                        <span class="material-symbols-outlined text-red-500 text-lg">close</span>
-                                        <span class="text-gray-400">Não se preparar para responder perguntas fundamentais sobre seu vínculo com o Brasil.</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- CTA WhatsApp -->
-                            <div class="mt-16 p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 shadow-2xl shadow-orange-500/20 text-black flex flex-col md:flex-row items-center justify-between gap-8">
-                                <div class="text-center md:text-left">
-                                    <h3 class="text-2xl font-black mb-2 uppercase tracking-tight">Planeje sua próxima viagem</h3>
-                                    <p class="font-medium opacity-80">Solicite uma cotação personalizada e viaje com segurança.</p>
-                                </div>
-                                <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Li%20seu%20artigo%20sobre%20visto%20americano%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o%20de%20viagem." target="_blank" class="bg-black text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 transition-all flex items-center gap-2 shrink-0">
-                                    <span class="material-symbols-outlined">chat</span>
-                                    Cotar com a KNJ
-                                </a>
-                            </div>
-    
-                            <!-- Assinatura Kenji -->
-                            <div class="mt-16 pt-10 border-t border-white/5 flex items-center gap-6">
-                                <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-orange-500/30 shadow-xl">
-                                    <img src="https://i.ibb.co/S4Qm249K/kenji-site.png" alt="Kenji" class="w-full h-full object-cover" referrerPolicy="no-referrer">
-                                </div>
-                                <div>
-                                    <p class="text-[10px] text-orange-500 uppercase tracking-[0.3em] font-bold mb-1">Autor do Artigo</p>
-                                    <h4 class="text-2xl font-black text-white">Kenji</h4>
-                                    <p class="text-sm text-gray-400 font-light">Especialista em Vistos e Fundador da KNJ TUR</p>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <aside class="lg:col-span-4 space-y-6">
-                            <div class="sticky top-28 space-y-6">
-                                <div class="bg-gradient-to-br from-white/5 to-transparent p-8 rounded-2xl border border-white/10 shadow-xl">
-                                    <h3 class="text-xl font-bold mb-4">Pronto para sua viagem?</h3>
-                                    <p class="text-gray-400 mb-8 text-sm leading-relaxed">Deixe que a KNJ TUR cuide de toda a burocracia para você. Aumente suas chances de aprovação.</p>
-                                    <a href="https://wa.me/5511994085822" class="flex items-center justify-center w-full btn-whatsapp py-4 rounded-xl font-extrabold uppercase tracking-widest text-xs transition-all hover:scale-105 gap-2">
-                                        Falar no WhatsApp
-                                    </a>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                </article>
-            </div>
-        </main>
-    </div>
-
-    <!-- Guia Screen -->
-    <div id="guia" class="screen">
-        <main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
-            <section class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-40 items-center">
-                <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6">
-                        <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-                        <span class="text-[10px] uppercase tracking-[0.2em] text-orange-500 font-bold">Edição Exclusiva 2026</span>
-                    </div>
-                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-10">
-                        Guia do&nbsp;<span class="text-gradient">Visto Americano</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-400 font-light max-w-2xl leading-relaxed mb-12">
-                        O caminho para a aprovação exige estratégia e precisão. Descubra como a KNJ TUR transforma burocracia em uma jornada de&nbsp;sucesso.
-                    </p>
-                    <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es%20sobre%20a%20assessoria%20de%20vistos." class="btn-whatsapp px-8 py-4 rounded-xl font-black text-lg shadow-xl inline-flex items-center gap-2">
-                        <span class="material-symbols-outlined">chat</span>
-                        Falar com Especialista
-                    </a>
-                </div>
-                <div class="lg:col-span-5">
-                    <img src="https://i.ibb.co/FqVyRtCZ/PASSAPORTE.webp" alt="Guia" class="rounded-3xl shadow-2xl border border-white/5" referrerPolicy="no-referrer">
-                </div>
-            </section>
-
-            <section class="mb-40">
-                <h2 class="text-4xl font-bold mb-16 text-center">A Jornada da Aprovação</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">01</div>
-                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">edit_document</span>
-                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Estratégia DS-160</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Análise técnica e preenchimento focado em destacar seus pontos fortes e mitigar riscos.</p>
-                    </div>
-                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">02</div>
-                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">payments</span>
-                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Gestão de Taxas</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Orientação completa sobre a taxa MRV e validação imediata no sistema consular.</p>
-                    </div>
-                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">03</div>
-                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">event_available</span>
-                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Agendamento</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Monitoramento inteligente para garantir as melhores datas e locais para sua conveniência.</p>
-                    </div>
-                    <div class="card-premium p-10 rounded-3xl border border-white/5 relative overflow-hidden group">
-                        <div class="absolute -right-4 -top-4 text-8xl font-black text-white/5 group-hover:text-orange-500/10 transition-colors">04</div>
-                        <span class="material-symbols-outlined text-orange-500 mb-8 text-3xl">verified_user</span>
-                        <h3 class="text-xl font-bold mb-4 uppercase tracking-wider">Mentoria</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Preparação psicológica e técnica para responder com segurança e clareza absoluta.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-40">
-                <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div class="space-y-8">
-                        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Por que a maioria&nbsp;é <span class="text-red-500">negada?</span></h2>
-                        <p class="text-lg text-gray-400 font-light leading-relaxed">O consulado não nega por acaso. Existem padrões claros que levam à rejeição:</p>
-                        <ul class="space-y-6">
-                            <li class="flex gap-4">
-                                <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="material-symbols-outlined text-red-500 text-xs">close</span>
-                                </span>
-                                <div>
-                                    <h4 class="font-bold text-white">Fragilidade de Vínculos</h4>
-                                    <p class="text-sm text-gray-400">Inexistência de laços profissionais ou familiares sólidos que comprovem a intenção de retorno.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4">
-                                <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="material-symbols-outlined text-red-500 text-xs">close</span>
-                                </span>
-                                <div>
-                                    <h4 class="font-bold text-white">Inconsistência Financeira</h4>
-                                    <p class="text-sm text-gray-400">Descompasso entre a realidade financeira apresentada e o cronograma de gastos da viagem.</p>
-                                </div>
-                            </li>
-                            <li class="flex gap-4">
-                                <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                                    <span class="material-symbols-outlined text-red-500 text-xs">close</span>
-                                </span>
-                                <div>
-                                    <h4 class="font-bold text-white">Ausência de Histórico Internacional</h4>
-                                    <p class="text-sm text-gray-400">Perfil de viajante sem registros prévios em outros países, o que demanda uma estratégia mais robusta.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-white/[0.02] p-10 rounded-[40px] border border-white/5">
-                        <h3 class="text-2xl font-bold mb-10">Perguntas Frequentes</h3>
-                        <div class="space-y-8">
-                            <div class="space-y-2">
-                                <h4 class="font-bold text-orange-500">Quanto tempo demora o processo?</h4>
-                                <p class="text-sm text-gray-400">Depende da fila do consulado, mas a consultoria agiliza toda a parte burocrática em poucos dias.</p>
-                            </div>
-                            <div class="space-y-2">
-                                <h4 class="font-bold text-orange-500">Posso tentar de novo se fui negado?</h4>
-                                <p class="text-sm text-gray-400">Sim, mas é fundamental analisar o motivo da negativa anterior antes de uma nova tentativa.</p>
-                            </div>
-                            <div class="space-y-2">
-                                <h4 class="font-bold text-orange-500">A KNJ garante a aprovação?</h4>
-                                <p class="text-sm text-gray-400">Ninguém pode garantir. O que garantimos é a melhor estratégia possível para maximizar suas chances.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Termos Screen -->
-    <div id="termos" class="screen">
-        <main class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
-            <h1 class="text-4xl font-bold mb-12 text-gradient">Termos de Uso</h1>
-            <div class="space-y-8 text-gray-400 leading-relaxed">
-                <p>Ao acessar nosso site, você concorda com os termos abaixo.</p>
-                <p>Nosso objetivo é oferecer informações e serviços de turismo, viagens internacionais e assessoria para visto americano.</p>
-                <p>A gente trabalha pra te orientar da melhor forma possível, mas é importante deixar claro que a aprovação do visto depende exclusivamente do consulado americano.</p>
-                <div class="space-y-4">
-                    <p class="font-bold text-white">Ao usar nosso site, você se compromete a:</p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Informar dados verdadeiros</li>
-                        <li>Não usar o site para fins ilegais</li>
-                        <li>Respeitar os conteúdos disponíveis</li>
-                    </ul>
-                </div>
-                <p>Todo o conteúdo do site é protegido e não pode ser copiado sem autorização.</p>
-                <p>Podemos atualizar esses termos a qualquer momento.</p>
-                <button onclick="navigateTo('home')" class="btn-outline px-8 py-3 rounded-full text-sm font-bold mt-12">Voltar para Home</button>
-            </div>
-        </main>
-    </div>
-
-    <!-- Privacidade Screen -->
-    <div id="privacidade" class="screen">
-        <main class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
-            <h1 class="text-4xl font-bold mb-12 text-gradient">Política de Privacidade</h1>
-            <div class="space-y-8 text-gray-400 leading-relaxed">
-                <p>Sua privacidade é importante para nós. Esta política explica como lidamos com seus dados.</p>
-                <p>Coletamos apenas as informações necessárias para fornecer nossos serviços de consultoria e turismo.</p>
-                <p>Seus dados são tratados com confidencialidade e utilizados exclusivamente para o processamento de suas solicitações e comunicações relacionadas aos nossos serviços.</p>
-                <p>Não compartilhamos seus dados pessoais com terceiros, exceto quando necessário para a prestação do serviço contratado ou por obrigação legal.</p>
-                <button onclick="navigateTo('home')" class="btn-outline px-8 py-3 rounded-full text-sm font-bold mt-12">Voltar para Home</button>
-            </div>
-        </main>
-    </div>
-
-    <!-- Contato Screen -->
-    <div id="contato" class="screen">
-        <main class="pt-32 pb-24 px-6 max-w-3xl mx-auto">
-            <h1 class="text-4xl font-bold mb-12 text-gradient">Fale com a gente</h1>
-            <div class="space-y-10">
-                <p class="text-xl text-gray-400 font-light">Ficou com dúvida ou quer começar seu processo? É só chamar:</p>
-                
-                <div class="grid gap-6">
-                    <div class="card-premium p-8 rounded-2xl flex items-center gap-6">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">mail</span>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">E-mail</p>
-                            <p class="text-lg font-bold">KENJI@KNJTUR.COM</p>
-                        </div>
-                    </div>
-                    
-                    <a href="https://wa.me/5511994085822" target="_blank" class="card-premium p-8 rounded-2xl flex items-center gap-6 hover:border-green-500/30 transition-all group">
-                        <span class="material-symbols-outlined text-green-500 text-3xl">chat</span>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">WhatsApp</p>
-                            <p class="text-lg font-bold group-hover:text-green-500 transition-colors">55 (11) 99408-5822</p>
-                        </div>
-                    </a>
-                    
-                    <div class="card-premium p-8 rounded-2xl flex items-center gap-6">
-                        <span class="material-symbols-outlined text-orange-500 text-3xl">location_on</span>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Localização</p>
-                            <p class="text-lg font-bold">Jardim Dom Bosco, Indaiatuba, SP</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-white/[0.02] rounded-xl border border-white/5">
-                    <p class="text-sm text-gray-400 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-orange-500">schedule</span>
-                        Atendimento de segunda a sexta, em horário comercial.
-                    </p>
-                </div>
-
-                <button onclick="navigateTo('home')" class="btn-outline px-8 py-3 rounded-full text-sm font-bold mt-8">Voltar para Home</button>
-            </div>
-        </main>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="w-full border-t border-white/5 bg-black py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col items-center gap-10 text-center">
-                <div class="flex flex-col items-center gap-4">
-                    <img src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR" class="h-20 w-auto opacity-90 transition-transform hover:scale-105 duration-500">
-                    <div class="space-y-3">
-                        <p class="text-xs text-gray-400 max-w-md mx-auto leading-relaxed">
-                            Especialistas em visto americano e viagens&nbsp;internacionais.
-                            <span class="italic">Atendimento rápido e direto pelo&nbsp;WhatsApp.</span>
-                        </p>
-                        <div class="space-y-1">
-                            <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500">@2026 KNJ TUR</p>
-                            <p class="text-[10px] uppercase tracking-[0.1em] text-gray-600">Jardim Dom Bosco, Indaiatuba, SP</p>
-                            <p class="text-[10px] uppercase tracking-[0.1em] text-orange-500 font-bold">KENJI@KNJTUR.COM</p>
-                        </div>
-                    </div>
+    <footer class="bg-surface py-20 border-t border-white/5 text-center">
+        <div class="container mx-auto px-6">
+            <img src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR Logo" class="h-10 w-auto mb-12 mx-auto">
+            <p class="text-xs text-on-surface-variant mb-4 uppercase tracking-[0.3em]">Especialistas em visto americano e viagens internacionais. Atendimento rápido e direto pelo WhatsApp.</p>
+            <div class="text-[10px] text-on-surface-variant/60 mb-8 uppercase tracking-widest flex flex-col gap-2">
+                <div>@2026 KNJ TUR | Jardim Dom Bosco, Indaiatuba, SP</div>
+                <div><a href="https://wa.me/5511994085822" class="text-white hover:text-primary">+55 (11) 99408-5822</a></div>
+            </div>
+            
+            <div class="flex justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-12 flex-wrap">
+                <a href="/" class="hover:text-primary transition-colors">Início</a>
+                <a href="/visto-americano/" class="hover:text-primary transition-colors">Guia Visto</a>
+                <a href="/viagens/" class="hover:text-primary transition-colors">Viagens</a>
+                <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                <span class="text-white/10">|</span>
+                <a href="/politica-de-privacidade/" class="hover:text-primary transition-colors">Política de Privacidade</a>
+                <a href="/termos-de-uso/" class="hover:text-primary transition-colors">Termos de Uso</a>
+            </div>
+
+            <div class="flex justify-center mb-12">
+                <a href="https://www.instagram.com/knjtur" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-colors group">
+                    <i data-lucide="instagram" size="20" class="group-hover:text-white"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col gap-4 text-[9px] uppercase tracking-widest text-on-surface-variant/40">
+                <div class="flex items-center justify-center gap-2">
+                    <i data-lucide="alert-triangle" size="10" class="text-primary"></i> ⚠️ Não somos afiliados ao governo dos Estados Unidos.
                 </div>
-                <div class="flex gap-12">
-                    <a href="javascript:void(0)" onclick="navigateTo('privacidade')" class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-orange-500 transition-colors">Privacidade</a>
-                    <a href="javascript:void(0)" onclick="navigateTo('termos')" class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-orange-500 transition-colors">Termos</a>
-                    <a href="javascript:void(0)" onclick="navigateTo('contato')" class="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-orange-500 transition-colors flex items-center gap-1">
-                        <span class="material-symbols-outlined text-[12px]">chat</span>
-                        Contato
-                    </a>
-                </div>
-                
-                <div class="flex gap-6 items-center">
-                    <a href="https://www.instagram.com/knjtur" target="_blank" class="text-white/60 hover:text-orange-500 transition-colors flex items-center" title="Siga-nos no Instagram">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                </div>
-                
-                <div class="pt-8 border-t border-white/5 w-full space-y-4">
-                    <p class="text-[9px] uppercase tracking-[0.2em] text-gray-700 font-medium">
-                        ⚠️ Não somos afiliados ao governo dos Estados Unidos.
-                    </p>
-                    <p class="text-[10px] uppercase tracking-[0.1em] text-gray-600">
-                        Site Desenvolvido por <a href="https://www.orvalia.com.br" target="_blank" class="text-gray-400 hover:text-orange-500 transition-colors">Orvalia Studio</a>
-                    </p>
+                <div class="flex items-center justify-center gap-1">
+                    Site Desenvolvido por <a href="https://www.orvalia.com.br" target="_blank" class="text-[#40E0D0] hover:brightness-110 font-bold">Orvalia Studio</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 z-[100] w-14 h-14 rounded-full bg-orange-500 text-black shadow-2xl flex items-center justify-center opacity-0 translate-y-10 transition-all duration-300 pointer-events-none hover:scale-110 active:scale-95">
-        <span class="material-symbols-outlined text-2xl">arrow_upward</span>
-    </button>
-
-    <!-- Fixed WhatsApp Button -->
-    <a href="https://wa.me/5511994085822?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20KNJ%20TUR%20e%20gostaria%20de%20maiores%20informa%C3%A7%C3%B5es." target="_blank" class="fixed bottom-8 left-8 z-[100] w-14 h-14 rounded-full btn-whatsapp shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all animate-pulse-whatsapp">
-        <span class="material-symbols-outlined text-3xl">chat</span>
+    <!-- WhatsApp Floating Pill -->
+    <a href="https://wa.me/5511994085822" target="_blank" class="fixed bottom-8 left-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform animate-float flex items-center justify-center">
+        <i data-lucide="message-circle" size="32"></i>
     </a>
 
-    <script>
-        const routes = {
-            '/ees-europa-filas-aeroportos': { type: 'blog', id: 'post-ees' },
-            '/ees-passo-a-passo': { type: 'blog', id: 'post-ees-passo-a-passo' },
-            '/visto-americano-ingles': { type: 'blog', id: 'post-ingles' },
-            '/vistos-consulares': { type: 'screen', id: 'servicos' },
-            '/pacotes-viagens': { type: 'screen', id: 'viagens' },
-            '/consultoria-visto': { type: 'screen', id: 'consultoria' },
-            '/quem-somos': { type: 'screen', id: 'sobre' },
-            '/blog': { type: 'screen', id: 'blog' },
-            '/contato': { type: 'screen', id: 'contato' },
-            '/privacidade': { type: 'screen', id: 'privacidade' },
-            '/termos': { type: 'screen', id: 'termos' },
-            '/': { type: 'screen', id: 'home' }
-        };
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 bg-primary text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 opacity-0 invisible translate-y-10 flex items-center justify-center">
+        <i data-lucide="arrow-up" size="32"></i>
+    </button>
 
-        const reverseRoutes = {
-            'home': '/',
-            'servicos': '/vistos-consulares',
-            'viagens': '/pacotes-viagens',
-            'consultoria': '/consultoria-visto',
-            'sobre': '/quem-somos',
-            'blog': '/blog',
-            'contato': '/contato',
-            'privacidade': '/privacidade',
-            'termos': '/termos'
-        };
-
-        const blogRoutes = {
-            'post-ees': '/ees-europa-filas-aeroportos',
-            'post-ees-passo-a-passo': '/ees-passo-a-passo',
-            'post-ingles': '/visto-americano-ingles'
-        };
-
-        function showBlogPost(postId, pushState = true) {
-            document.getElementById('blog-index').classList.add('hidden');
-            document.getElementById('blog-content').classList.remove('hidden');
-            document.querySelectorAll('.blog-post').forEach(post => post.classList.add('hidden'));
-            document.getElementById(postId).classList.remove('hidden');
-            window.scrollTo(0, 0);
-
-            if (pushState && blogRoutes[postId]) {
-                history.pushState({ postId }, '', blogRoutes[postId]);
-            }
-        }
-
-        function hideBlogPost(pushState = true) {
-            const index = document.getElementById('blog-index');
-            const content = document.getElementById('blog-content');
-            if (index && content) {
-                index.classList.remove('hidden');
-                content.classList.add('hidden');
-            }
-            window.scrollTo(0, 0);
-
-            if (pushState) {
-                history.pushState({ screenId: 'blog' }, '', '/blog');
-            }
-        }
-
-        function shareArticle() {
-            const activePost = document.querySelector('.blog-post:not(.hidden)');
-            const title = activePost ? activePost.querySelector('h1').innerText : 'KNJ TUR Blog';
-            const url = window.location.href;
-
-            if (navigator.share) {
-                navigator.share({
-                    title: title,
-                    text: `Confira este artigo da KNJ TUR: ${title}`,
-                    url: url
-                }).catch(err => {
-                    console.log('Error sharing:', err);
-                });
-            } else {
-                navigator.clipboard.writeText(url).then(() => {
-                    const btn = event.currentTarget;
-                    const originalText = btn.innerHTML;
-                    btn.innerHTML = '<span class="material-symbols-outlined text-sm">check</span> <span class="text-[10px] font-bold uppercase tracking-widest">Copiado!</span>';
-                    btn.classList.add('text-green-500', 'border-green-500/20');
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.classList.remove('text-green-500', 'border-green-500/20');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy:', err);
-                });
-            }
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const isOpen = !menu.classList.contains('translate-x-full');
-            
-            if (isOpen) {
-                menu.classList.add('translate-x-full');
-                document.body.style.overflow = '';
-            } else {
-                menu.classList.remove('translate-x-full');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function navigateTo(screenId, pushState = true) {
-            // Close mobile menu if open
-            const menu = document.getElementById('mobileMenu');
-            if (menu && !menu.classList.contains('translate-x-full')) {
-                toggleMobileMenu();
-            }
-
-            // Hide all screens
-            document.querySelectorAll('.screen').forEach(screen => {
-                screen.classList.remove('active');
-            });
-            
-            // Show selected screen
-            const targetScreen = document.getElementById(screenId);
-            if (targetScreen) {
-                targetScreen.classList.add('active');
-                window.scrollTo(0, 0);
-
-                // Reset blog view if navigating to blog main page
-                if (screenId === 'blog') {
-                    hideBlogPost(false);
-                }
-            }
-
-            // Update desktop nav links
-            document.querySelectorAll('.nav-link').forEach(link => {
-                const isViagens = link.getAttribute('data-screen') === 'viagens';
-                if (link.getAttribute('data-screen') === screenId) {
-                    if (!isViagens) {
-                        link.classList.add('nav-link-active');
-                    } else {
-                        link.classList.add('text-white', 'border-white/40');
-                        link.classList.remove('text-white/40', 'border-white/10');
-                    }
-                    link.classList.remove('text-on-surface-variant');
-                } else {
-                    if (!isViagens) {
-                        link.classList.remove('nav-link-active');
-                        link.classList.add('text-on-surface-variant');
-                    } else {
-                        link.classList.remove('text-white', 'border-white/40');
-                        link.classList.add('text-white/40', 'border-white/10');
-                    }
-                }
-            });
-
-            // Update mobile nav links
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                if (link.getAttribute('data-screen') === screenId) {
-                    link.classList.add('mobile-nav-link-active');
-                } else {
-                    link.classList.remove('mobile-nav-link-active');
-                }
-            });
-
-            if (pushState && reverseRoutes[screenId]) {
-                history.pushState({ screenId }, '', reverseRoutes[screenId]);
-            }
-        }
-
-        function handleRouting() {
-            const path = window.location.pathname;
-            const route = routes[path];
-            
-            if (route) {
-                if (route.type === 'blog') {
-                    // Ensure blog screen is active
-                    document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-                    document.getElementById('blog').classList.add('active');
-                    showBlogPost(route.id, false);
-                    
-                    // Update active nav state
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        if (link.getAttribute('data-screen') === 'blog') link.classList.add('nav-link-active');
-                        else link.classList.remove('nav-link-active');
-                    });
-                } else {
-                    navigateTo(route.id, false);
-                }
-            } else {
-                navigateTo('home', false);
-            }
-        }
-
-        // Initial navigation and popstate
-        window.addEventListener('load', handleRouting);
-        window.addEventListener('popstate', handleRouting);
-
-        // Scroll to Top Button Visibility and Header Logo Animation
-        window.addEventListener('scroll', () => {
-            const btn = document.getElementById('scrollTopBtn');
-            const headerLogo = document.getElementById('headerLogo');
-            const headerTitle = document.getElementById('headerTitle');
-            
-            if (window.scrollY > 50) {
-                if (headerLogo) {
-                    headerLogo.classList.remove('h-14');
-                    headerLogo.classList.add('h-10', 'animate-glow');
-                }
-                if (headerTitle) {
-                    headerTitle.classList.add('text-lg');
-                    headerTitle.classList.remove('text-xl');
-                }
-            } else {
-                if (headerLogo) {
-                    headerLogo.classList.add('h-14');
-                    headerLogo.classList.remove('h-10', 'animate-glow');
-                }
-                if (headerTitle) {
-                    headerTitle.classList.remove('text-lg');
-                    headerTitle.classList.add('text-xl');
-                }
-            }
-
-            if (window.scrollY > 500) {
-                btn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-            } else {
-                btn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-            }
-        });
-
-        // Force play hero video if autoplay is blocked and ensure it keeps playing
-        document.addEventListener('DOMContentLoaded', function() {
-            const heroVideo = document.querySelector('video');
-            if (heroVideo) {
-                const startVideo = () => {
-                    heroVideo.play().catch(e => console.log("Play failed", e));
-                };
-
-                startVideo();
-
-                // If it pauses for any reason, force it back to play
-                heroVideo.addEventListener('pause', () => {
-                    startVideo();
-                });
-
-                // Handle autoplay block by browser
-                heroVideo.play().catch(error => {
-                    const playOnInteraction = () => {
-                        startVideo();
-                        document.removeEventListener('click', playOnInteraction);
-                        document.removeEventListener('touchstart', playOnInteraction);
-                    };
-                    document.addEventListener('click', playOnInteraction);
-                    document.addEventListener('touchstart', playOnInteraction);
-                });
-            }
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
