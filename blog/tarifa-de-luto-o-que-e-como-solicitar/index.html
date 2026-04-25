@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renovação de Visto Americano: Como fazer sem precisar de nova entrevista | KNJ TUR</title>
-    <meta name="description" content="Seu visto venceu ou está prestes a vencer? Veja se você se enquadra nas regras para renovar sem precisar passar pelo cônsul novamente.">
+    <title>Tarifa de Luto: o que é, como funciona e como solicitar | KNJ TUR</title>
+    <meta name="description" content="Saiba o que é a Tarifa de Luto, como funciona o desconto de até 80% em passagens aéreas e como solicitar nas companhias GOL e LATAM em casos de emergência familiar.">
+    
+    <!-- Base Styles -->
     <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { primary: '#FF8C00', 'primary-dark': '#CC7000', surface: '#0A0A0A', 'surface-variant': '#141414', 'on-surface': '#FFFFFF', 'on-surface-variant': '#A0A0A0' },
-                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] }
+                    colors: {
+                        primary: '#FF8C00',
+                        'primary-dark': '#CC7000',
+                        accent: '#FFD700',
+                        surface: '#0A0A0A',
+                        'surface-variant': '#141414',
+                        'on-surface': '#FFFFFF',
+                        'on-surface-variant': '#A0A0A0',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
                 }
             }
         }
     </script>
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-primary/30">
+    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-lg border-b border-white/5 h-20 flex items-center transition-all duration-300">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="/" class="flex items-center group">
                 <img src="https://i.postimg.cc/d1RfCdxp/KNJ-LOGO-TRANSPARENTE.png" alt="KNJ TUR Logo" class="h-10 md:h-12 w-auto transition-transform group-hover:scale-105">
             </a>
+            
             <nav class="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-on-surface-variant">
                 <a href="/" class="hover:text-primary transition-colors">Home</a>
-                <a href="/visto-americano/" class="hover:text-primary transition-colors text-primary">Guia Visto</a>
-                <a href="/blog/" class="hover:text-primary transition-colors">Blog</a>
+                <a href="/visto-americano/" class="hover:text-primary transition-colors">Guia Visto</a>
+                <a href="/blog/" class="hover:text-primary transition-colors text-primary">Blog</a>
                 <a href="/viagens/" class="hover:text-primary transition-colors">Viagens</a>
                 <a href="https://www.instagram.com/knjtur" target="_blank" class="hover:opacity-80 transition-opacity">
                     <img src="https://i.ibb.co/dsZ1CrRd/instagramknj.png" alt="Instagram" class="w-6 h-6 object-contain">
@@ -36,6 +53,7 @@
                     <i data-lucide="message-circle" size="18"></i> WhatsApp
                 </a>
             </nav>
+
             <button id="menu-btn" class="md:hidden text-white p-2">
                 <i data-lucide="menu"></i>
             </button>
@@ -46,8 +64,8 @@
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-surface hidden flex flex-col items-center justify-center gap-8 text-2xl font-black uppercase italic tracking-tighter">
         <a href="/">Home</a>
         <a href="/visto-americano/">Guia Visto</a>
-        <a href="/blog/">Blog</a>
-        <a href="/viagens/">Viagens</a>
+        <a href="/blog/" class="text-primary">Blog</a>
+        <a href="/viagens/" class="hover:text-primary">Viagens</a>
         <a href="https://www.instagram.com/knjtur" target="_blank" class="hover:opacity-80 transition-opacity">
             <img src="https://i.ibb.co/dsZ1CrRd/instagramknj.png" alt="Instagram" class="w-12 h-12 object-contain">
         </a>
@@ -63,33 +81,76 @@
                     <i data-lucide="arrow-left" size="14"></i> Voltar ao Blog
                 </a>
                 <div class="flex items-center gap-4 mb-6 text-xs font-bold uppercase tracking-widest text-primary">
-                    <span>Visto Americano</span>
+                    <span>Direitos do Passageiro</span>
                     <span class="w-1 h-1 bg-white/20 rounded-full"></span>
                     <div class="flex items-center gap-1 text-on-surface-variant">
                         <i data-lucide="calendar" size="14"></i>
-                        <span>05 de Abril, 2026</span>
+                        <span>25 de Abril, 2026</span>
                     </div>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-display font-black text-white leading-tight mb-8 tracking-tight">Renovação de Visto Americano: Como fazer sem precisar de nova entrevista</h1>
+                <h1 class="text-4xl md:text-6xl font-display font-black text-white leading-tight mb-8 tracking-tight">
+                    Tarifa de Luto: o que é, quem tem direito e como solicitar
+                </h1>
                 <div class="rounded-[2.5rem] overflow-hidden aspect-video border border-white/5 mb-12 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200" alt="Renovação de Visto" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f2?auto=format&fit=crop&q=80&w=1200" alt="Tarifa de Luto" class="w-full h-full object-cover">
                 </div>
             </header>
 
             <div class="prose max-w-none">
-                <p>Muitos brasileiros não sabem que, em diversos casos, a renovação do visto americano pode ser feita apenas com a entrega de documentos no CASV, sem a necessidade de ir ao consulado para uma entrevista.</p>
-                <h2>Quem pode renovar sem entrevista?</h2>
-                <p>Geralmente, se o seu visto anterior ainda está válido ou expirou nos últimos 48 meses, e se você está renovando na mesma categoria, você pode ser elegível para a isenção de entrevista.</p>
-                <h2>O Processo de Renovação</h2>
-                <p>Ainda é necessário preencher um novo DS-160 e pagar a taxa MRV. A diferença é que o sistema de agendamento permitirá que você escolha apenas a data de entrega dos documentos e coleta de biometria ou, em alguns casos, apenas o envio via correios.</p>
-                <h2>O Risco da Autoconfiança</h2>
-                <p>Mesmo na renovação, o consulado pode convocar você para uma entrevista caso encontrem inconsistências no seu histórico de viagens ou mudanças bruscas de perfil. Por isso, a revisão profissional continua sendo vital.</p>
+                <p>Perder um ente querido ou lidar com uma hospitalização grave é, por si só, um dos momentos mais difíceis que alguém pode enfrentar. E quando a situação exige uma viagem urgente — muitas vezes de última hora —, o custo de uma passagem aérea pode se tornar mais um peso nesse momento delicado.</p>
+                <p>É para esse cenário que existe a <strong>Tarifa de Luto</strong>, um benefício pouco conhecido, mas que pode representar um alívio real para quem precisa viajar às pressas.</p>
+
+                <h2>O que é a Tarifa de Luto?</h2>
+                <p>A Tarifa de Luto é um desconto especial concedido por algumas companhias aéreas para passageiros que precisam viajar em situação de emergência familiar — seja em decorrência do falecimento ou da hospitalização grave de um parente próximo.</p>
+                <p>O desconto pode chegar a <strong>80% do valor da passagem</strong> e é oferecido tanto para voos nacionais quanto para voos internacionais.</p>
+                <p><strong>Importante:</strong> a Tarifa de Luto não é uma obrigação legal das companhias aéreas. Trata-se de uma política interna e voluntária de cada empresa. Por isso, a disponibilidade e as condições podem variar de acordo com a companhia.</p>
+
+                <h2>Quais companhias oferecem a Tarifa de Luto?</h2>
+                <p>No Brasil, as principais companhias que oferecem esse benefício são a GOL e a LATAM. Recomendamos sempre entrar em contato diretamente com o SAC da companhia de sua preferência para confirmar a disponibilidade e as condições no momento da solicitação.</p>
+
+                <h2>Quem tem direito ao desconto?</h2>
+                <p>O benefício geralmente é concedido em casos de falecimento ou hospitalização grave dos seguintes familiares:</p>
+                <ul>
+                    <li>Avós e avôs</li>
+                    <li>Pais e filhos</li>
+                    <li>Marido e esposa (cônjuges)</li>
+                    <li>Irmãos</li>
+                    <li>Tios e sobrinhos</li>
+                    <li>Cunhados e companheiros(as)</li>
+                </ul>
+
+                <h2>A Tarifa de Luto vale para voos internacionais?</h2>
+                <p>Sim. O desconto se aplica tanto a voos nacionais quanto a voos internacionais. No entanto, para trechos internacionais, o contato deve ser feito diretamente com o SAC da companhia aérea — não é possível solicitar nas lojas físicas.</p>
+
+                <h2>Como solicitar a Tarifa de Luto?</h2>
+                <p>O processo de solicitação é simples, mas exige agilidade:</p>
+                
+                <h3>1. Entre em contato o quanto antes</h3>
+                <p>Assim que a situação de emergência ocorrer, ligue para o SAC da companhia aérea ou vá pessoalmente a uma loja (apenas para voos nacionais).</p>
+                
+                <h3>2. Explique a situação</h3>
+                <p>Informe que você precisa da Tarifa de Luto e detalhe a situação (falecimento ou hospitalização).</p>
+                
+                <h3>3. Apresente a documentação</h3>
+                <p>A companhia irá solicitar um dos seguintes documentos:</p>
+                <ul>
+                    <li><strong>Certidão de óbito</strong> — em casos de falecimento</li>
+                    <li><strong>Laudo médico ou comprovante de hospitalização</strong> — em casos de internação grave</li>
+                </ul>
+
+                <div class="bg-primary/10 border-l-4 border-primary p-6 rounded-r-2xl my-8">
+                    <p class="font-bold text-white mb-2">Dica importante: não compre a passagem antes de ligar</p>
+                    <p class="text-sm">Muitas pessoas compram a passagem com urgência e só depois ficam sabendo da Tarifa de Luto. Por isso, antes de qualquer compra, entre em contato com a companhia aérea. O desconto precisa ser solicitado antes da emissão do bilhete.</p>
+                </div>
+
+                <h2>Viajante internacional: fique atento aos seus direitos</h2>
+                <p>Se você possui visto americano ou viaja regularmente ao exterior, é fundamental conhecer seus direitos como passageiro — inclusive em situações de emergência. A KNJ Tur está aqui para orientar você em todos os momentos da sua jornada de viagem, desde a obtenção do visto até o suporte em situações inesperadas.</p>
 
                 <div class="cta-box">
                     <h3>Como podemos te ajudar hoje?</h3>
-                    <p>Tem dúvidas sobre a renovação ou quer aproveitar para planejar sua próxima viagem?</p>
+                    <p>Tem dúvidas sobre direitos do passageiro ou quer planejar sua próxima viagem com segurança?</p>
                     <div class="flex flex-col md:flex-row gap-4 justify-center mt-8">
-                        <a href="https://wa.me/5511994085822?text=Olá,%20tenho%20dúvidas%20sobre%20a%20renovação%20do%20visto." class="btn-cta !mt-0 flex items-center justify-center gap-2">
+                        <a href="https://wa.me/5511994085822?text=Olá,%20tenho%20dúvidas%20sobre%20a%20tarifa%20de%20luto." class="btn-cta !mt-0 flex items-center justify-center gap-2">
                             <i data-lucide="message-circle"></i> Tirar Dúvidas
                         </a>
                         <a href="/viagens/" class="bg-white text-surface hover:bg-primary hover:text-white px-8 py-4 rounded-full font-black uppercase tracking-tighter transition-all flex items-center justify-center gap-2">
@@ -147,6 +208,7 @@
         <i data-lucide="arrow-up" size="32"></i>
     </button>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="/script.js"></script>
 </body>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "npx serve -l 3000 ."
+    "start": "npx serve -l 3000 dist",
+    "build": "mkdir -p dist && cp -r blog consultoria index.html metadata.json politica-de-privacidade script.js styles.css termos-de-uso viagens visto-americano dist/"
   }
 }
